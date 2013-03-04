@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '~> 3.2.12'
 gem "figaro", ">= 0.5.3"
 gem 'jquery-rails', '~> 2.0.0'
 
@@ -11,6 +11,7 @@ end
 group :production do
 	gem 'pg'
 	gem 'unicorn'
+	gem 'fog'
 end
 
 group :assets do
