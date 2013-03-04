@@ -95,3 +95,6 @@ vendor/extensions/**/spec/dummy
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore Sublime project file
+sublime-project
