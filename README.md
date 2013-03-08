@@ -16,3 +16,16 @@ Start your server
 	
 	rails s
 
+#Deployment
+We have two environments, a staging environment and a production environment on Heroku. 
+###Add Git repositories
+
+	git remote add heroku-stage git@heroku.com:owc133-stage.git
+	git remote add heroku-production git@heroku.com:owc133-production.git
+
+###Push to Heroku
+
+	#staging
+	git push heroku-stage develop:master
+	#production
+	git push heroku-production master:master
