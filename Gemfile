@@ -11,10 +11,14 @@ group :development, :test do
 	gem "quiet_assets", ">= 1.0.1"
 end
 
-group :production do
+group :staging, :production do
 	gem 'pg'
 	gem 'unicorn'
 	gem 'fog'
+end
+
+group :production do
+
 	gem 'newrelic_rpm'
 end
 
