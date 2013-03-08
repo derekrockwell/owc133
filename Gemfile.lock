@@ -122,6 +122,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (2.6.6)
     netrc (0.7.7)
+    newrelic_rpm (3.5.7.59)
     nokogiri (1.5.6)
     orm_adapter (0.0.7)
     paper_trail (2.7.1)
@@ -269,6 +270,7 @@ DEPENDENCIES
   fog
   heroku
   jquery-rails (~> 2.0.0)
+  newrelic_rpm
   pg
   quiet_assets (>= 1.0.1)
   rails (~> 3.2.12)
