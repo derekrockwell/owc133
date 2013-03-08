@@ -192,6 +192,9 @@ GEM
       will_paginate (~> 3.0.2)
     refinerycms-dashboard (2.0.9)
       refinerycms-core (= 2.0.9)
+    refinerycms-i18n (2.0.2)
+      refinerycms-core (~> 2.0.0)
+      routing-filter (>= 0.2.3)
     refinerycms-images (2.0.9)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
@@ -217,6 +220,8 @@ GEM
       refinerycms-core (~> 2.0.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    routing-filter (0.3.1)
+      actionpack
     ruby-hmac (0.4.0)
     rubyzip (0.9.9)
     sass (3.2.5)
@@ -266,6 +271,7 @@ DEPENDENCIES
   refinerycms (~> 2.0.0)
   refinerycms-blog (~> 2.0.0)
   refinerycms-calendar (~> 2.0.0)!
+  refinerycms-i18n (~> 2.0.0)
   refinerycms-inquiries (~> 2.0.0)
   refinerycms-menus!
   refinerycms-page-images (~> 2.0.0)
