@@ -203,6 +203,10 @@ GEM
       filters_spam (~> 0.2)
       refinerycms-core (~> 2.0.1)
       refinerycms-settings (~> 2.0.1)
+    refinerycms-news (2.0.1)
+      friendly_id (~> 4.0.1)
+      refinerycms-core (~> 2.0.1)
+      refinerycms-settings (~> 2.0.0)
     refinerycms-page-images (2.0.1)
       refinerycms-pages (~> 2.0.0)
     refinerycms-pages (2.0.9)
@@ -274,6 +278,7 @@ DEPENDENCIES
   refinerycms-i18n (~> 2.0.0)
   refinerycms-inquiries (~> 2.0.0)
   refinerycms-menus!
+  refinerycms-news (~> 2.0.0)
   refinerycms-page-images (~> 2.0.0)
   refinerycms-search (~> 2.0.0)
   sass-rails (~> 3.2.3)
