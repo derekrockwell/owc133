@@ -111,6 +111,8 @@ GEM
       net-ssh (>= 2.1.3)
       nokogiri (~> 1.5.0)
       ruby-hmac
+    font-awesome-rails (3.0.2.0)
+      railties (>= 3.1)
     formatador (0.2.4)
     friendly_id (4.0.9)
     globalize3 (0.2.0)
@@ -313,6 +315,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   figaro (>= 0.5.3)
   fog
+  font-awesome-rails
   heroku
   jquery-rails (~> 2.0.0)
   newrelic_rpm

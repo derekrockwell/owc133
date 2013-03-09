@@ -5,6 +5,7 @@ gem 'rails', '~> 3.2.12'
 gem "figaro", ">= 0.5.3"
 gem 'jquery-rails', '~> 2.0.0'
 gem 'anjlab-bootstrap-rails', '>= 2.2', :require => 'bootstrap-rails'
+gem "font-awesome-rails"
 
 group :development, :test do
 	gem 'sqlite3'
