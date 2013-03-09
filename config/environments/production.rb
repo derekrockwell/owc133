@@ -50,14 +50,14 @@ Owc133::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-    :user_name => 'owc133-93a3c75d9e92380b',
-    :password => '220ace86d56a616c',
-    :address => 'mailtrap.io',
-    :port => '2525',
-    :authentication => :plain,
-  }
+  # ActionMailer::Base.delivery_method = :smtp
+  # ActionMailer::Base.smtp_settings = {
+  #   :user_name => 'owc133-93a3c75d9e92380b',
+  #   :password => '220ace86d56a616c',
+  #   :address => 'mailtrap.io',
+  #   :port => '2525',
+  #   :authentication => :plain,
+  # }
   # Enable threaded mode
   # config.threadsafe!
 
