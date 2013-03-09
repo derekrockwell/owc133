@@ -52,11 +52,12 @@ Owc133::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    :user_name => 'owc133-93a3c75d9e92380b',
-    :password => '220ace86d56a616c',
-    :address => 'mailtrap.io',
-    :port => '2525',
-    :authentication => :plain,
+    :address   => ENV["EMAIL_ADDRESS"],
+    :port      => 2525,
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => ENV["EMAIL_USERNAME"],
+    :password  => ENV["EMAIL_PASSWORD"], # SMTP password is any valid API key
+    :authentication => :plain#'login' # Mandrill supports 'plain' or 'login'
   }
   # Enable threaded mode
   # config.threadsafe!
