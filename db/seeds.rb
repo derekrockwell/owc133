@@ -32,7 +32,9 @@ puts "loading custom menus, pages, etc"
 
 puts "ensuring default custom menu"
 Refinery::Menus::Menu.create(title: "header", permatitle: "header")
-
+Refinery::Menus::Menu.create(title: "why_sidebar", permatitle: "why_sidebar")
+Refinery::Menus::Menu.create(title: "what_sidebar", permatitle: "what_sidebar")
+Refinery::Menus::Menu.create(title: "when_sidebar", permatitle: "when_sidebar")
 puts "create base custom pages and their parts"
 
 

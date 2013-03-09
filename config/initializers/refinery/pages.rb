@@ -11,7 +11,7 @@ Refinery::Pages.configure do |config|
   # end
 
   # Configure global page default parts
-  # config.default_parts = ["Body", "Side Body"]
+  config.default_parts = ["Body"]
 
   # Configure whether to allow adding new page parts
   config.new_page_parts = true
@@ -46,7 +46,7 @@ Refinery::Pages.configure do |config|
 
   # config.layout_template_whitelist = ["application"]
 
-  config.view_template_whitelist = ["home", "show", "how", "why","when"]
+  config.view_template_whitelist = ["home", "show", "what", "why","when"]
 
   config.use_layout_templates = true
 
