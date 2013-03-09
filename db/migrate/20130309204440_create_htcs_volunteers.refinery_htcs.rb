@@ -17,7 +17,7 @@ class CreateHtcsVolunteers < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :refinery_volunteer_interests do
+    create_table :refinery_htcs_volunteer_interests do |t|
       t.integer :volunteer_id
       t.integer :volunteer_category_id
     end
@@ -35,7 +35,7 @@ class CreateHtcsVolunteers < ActiveRecord::Migration
     end
     
     rename_column :refinery_htcs_work_hours, :volunteer_id, :user_id
-    drop_table :refinery_volunteer_interests
+    drop_table :refinery_htcs_volunteer_interests
     drop_table :refinery_htcs_volunteers
 
   end

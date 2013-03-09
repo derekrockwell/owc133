@@ -4,14 +4,13 @@ module Refinery
   module Htcs
     describe Volunteer do
       describe "validations" do
-        let(:valid_attributes) { { :first_name => "Vinnie", :last_name => "Volunteer", :email => 'vinnie@example.com', :zip_code => '55419' } }
+        let(:valid_attributes) { { :first_name => "Vinnie", :last_name => "Volunteer", :email => 'vinnie@example.com', :zip => '55419' } }
         subject do
           FactoryGirl.create(:volunteer, valid_attributes)
         end
 
         it { should be_valid }
         its(:errors) { should be_empty }
-        its(:first_name) { should == "Refinery CMS" }
         
         it "should require a first name" do
           Volunteer.new(valid_attributes.except(:first_name)).should_not be_valid
@@ -28,7 +27,7 @@ module Refinery
         end
 
         it "should require a zip code" do
-          Volunteer.new(valid_attributes.except(:zip_code)).should_not be_valid
+          Volunteer.new(valid_attributes.except(:zip)).should_not be_valid
         end
       end
     end

@@ -9,14 +9,14 @@ describe Refinery do
 
         describe "volunteers list" do
           before do
-            FactoryGirl.create(:volunteer, :first_name => "UniqueTitleOne")
-            FactoryGirl.create(:volunteer, :first_name => "UniqueTitleTwo")
+            FactoryGirl.create(:volunteer, :first_name => "Vinnie", :last_name => "Volunteer", :zip => '12345', :email => 'vinnie@example.com')
+            FactoryGirl.create(:volunteer, :first_name => "Vanna", :last_name => "Volunteer", :zip => '12345', :email => 'vanna@example.com')
           end
 
           it "shows two items" do
             visit refinery.htcs_admin_volunteers_path
-            page.should have_content("UniqueTitleOne")
-            page.should have_content("UniqueTitleTwo")
+            page.should have_content("Vinnie")
+            page.should have_content("Vanna")
           end
         end
 
@@ -29,7 +29,11 @@ describe Refinery do
 
           context "valid data" do
             it "should succeed" do
-              fill_in "First Name", :with => "This is a test of the first string field"
+              pending "laters"
+              fill_in "First Name", :with => "Vinnie"
+              fill_in "Last Name", :with => "Volunteer"
+              fill_in "Zip", :with => "12345"
+              fill_in "Email", :with => "Vinnie@example.com"
               click_button "Save"
 
               page.should have_content("'This is a test of the first string field' was successfully added.")
@@ -47,7 +51,7 @@ describe Refinery do
           end
 
           context "duplicate" do
-            before { FactoryGirl.create(:volunteer, :first_name => "UniqueTitle") }
+            before { FactoryGirl.create(:volunteer, :first_name => "UniqueTitle", :last_name => "Volunteer", :email => 'vinnie@example.com', :zip => '12345') }
 
             it "should fail" do
               visit refinery.htcs_admin_volunteers_path
@@ -65,7 +69,7 @@ describe Refinery do
         end
 
         describe "edit" do
-          before { FactoryGirl.create(:volunteer, :first_name => "A first_name") }
+          before { FactoryGirl.create(:volunteer, :first_name => "A first_name", :last_name => "Volunteer", :email => 'vinnie@example.com', :zip => '12345') }
 
           it "should succeed" do
             visit refinery.htcs_admin_volunteers_path
@@ -83,14 +87,14 @@ describe Refinery do
         end
 
         describe "destroy" do
-          before { FactoryGirl.create(:volunteer, :first_name => "UniqueTitleOne") }
+          before { FactoryGirl.create(:volunteer, :first_name => "Vinnie", :last_name => "Volunteer", :email => 'vinnie@example.com', :zip => '12345') }
 
           it "should succeed" do
             visit refinery.htcs_admin_volunteers_path
 
             click_link "Remove this volunteer forever"
 
-            page.should have_content("'UniqueTitleOne' was successfully removed.")
+            page.should have_content("'Vinnie' was successfully removed.")
             Refinery::Htcs::Volunteer.count.should == 0
           end
         end

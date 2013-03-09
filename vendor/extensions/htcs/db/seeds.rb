@@ -99,12 +99,12 @@ end
   end
 end
 
-VolunteerCategory.find_or_create_by_name("Patient and Family Care")
-VolunteerCategory.find_or_create_by_name("Bereavement")
-VolunteerCategory.find_or_create_by_name("Administrative Support")
-VolunteerCategory.find_or_create_by_name("Needlework")
-VolunteerCategory.find_or_create_by_name("Vigil")
-VolunteerCategory.find_or_create_by_name("Pet Therapy")
-VolunteerCategory.find_or_create_by_name("Speakers Bereau")
-VolunteerCategory.find_or_create_by_name("Massage Therapy")
-VolunteerCategory.find_or_create_by_name("Holiday Lights and Limos")
+Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Patient and Family Care")
+Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Bereavement")
+Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Administrative Support")
+Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Needlework")
+Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Vigil")
+Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Pet Therapy")
+Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Speakers Bereau")
+Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Massage Therapy")
+Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Holiday Lights and Limos")
