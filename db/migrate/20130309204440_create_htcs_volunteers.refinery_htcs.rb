@@ -1,3 +1,4 @@
+# This migration comes from refinery_htcs (originally 4)
 class CreateHtcsVolunteers < ActiveRecord::Migration
 
   def up
