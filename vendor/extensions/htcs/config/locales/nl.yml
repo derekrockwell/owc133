@@ -1,0 +1,55 @@
+nl:
+  refinery:
+    plugins:
+      volunteer_categories:
+        title: Volunteer Categories
+      htcs:
+        title: Htcs
+    volunteer_categories:
+      admin:
+        volunteer_categories:
+          actions:
+            create_new: Maak een nieuwe Volunteer Category
+            reorder: Wijzig de volgorde van de Volunteer Categories
+            reorder_done: Klaar met het wijzingen van de volgorde van de Volunteer
+              Categories
+          records:
+            title: Volunteer Categories
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Volunteer Categories. Druk op 'Maak een
+              nieuwe Volunteer Category' om de eerste aan te maken.
+          volunteer_category:
+            view_live_html: Bekijk deze volunteer category op de website <br/><em>(opent
+              een nieuw venster)</em>
+            edit: Bewerk deze volunteer category
+            delete: Verwijder deze volunteer category voor eeuwig
+      volunteer_categories:
+        show:
+          other: Andere Volunteer Categories
+    htcs:
+      admin:
+        htcs:
+          actions:
+            create_new: Maak een nieuwe Htc
+            reorder: Wijzig de volgorde van de Htcs
+            reorder_done: Klaar met het wijzingen van de volgorde van de Htcs
+          records:
+            title: Htcs
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Htcs. Druk op 'Maak een nieuwe Htc' om
+              de eerste aan te maken.
+          htc:
+            view_live_html: Bekijk deze htc op de website <br/><em>(opent een nieuw
+              venster)</em>
+            edit: Bewerk deze htc
+            delete: Verwijder deze htc voor eeuwig
+      htcs:
+        show:
+          other: Andere Htcs
+  activerecord:
+    attributes:
+      refinery/volunteer_categories/volunteer_category:
+        name: Name
+        sequence: Sequence
+      refinery/htcs/htc:
+        name: Name

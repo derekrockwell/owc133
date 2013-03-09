@@ -1,0 +1,54 @@
+nb:
+  refinery:
+    plugins:
+      volunteer_categories:
+        title: Volunteer Categories
+      htcs:
+        title: Htcs
+    volunteer_categories:
+      admin:
+        volunteer_categories:
+          actions:
+            create_new: Lag en ny Volunteer Category
+            reorder: Endre rekkefølgen på Volunteer Categories
+            reorder_done: Ferdig å endre rekkefølgen Volunteer Categories
+          records:
+            title: Volunteer Categories
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Volunteer Categories enda. Klikk på "Lag en
+              ny Volunteer Category" for å legge til din første volunteer category.
+          volunteer_category:
+            view_live_html: Vis hvordan denne volunteer category ser ut offentlig
+              <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne volunteer category
+            delete: Fjern denne volunteer category permanent
+      volunteer_categories:
+        show:
+          other: Andre Volunteer Categories
+    htcs:
+      admin:
+        htcs:
+          actions:
+            create_new: Lag en ny Htc
+            reorder: Endre rekkefølgen på Htcs
+            reorder_done: Ferdig å endre rekkefølgen Htcs
+          records:
+            title: Htcs
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Htcs enda. Klikk på "Lag en ny Htc" for å legge
+              til din første htc.
+          htc:
+            view_live_html: Vis hvordan denne htc ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne htc
+            delete: Fjern denne htc permanent
+      htcs:
+        show:
+          other: Andre Htcs
+  activerecord:
+    attributes:
+      refinery/volunteer_categories/volunteer_category:
+        name: Name
+        sequence: Sequence
+      refinery/htcs/htc:
+        name: Name

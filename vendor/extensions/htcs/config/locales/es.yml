@@ -1,0 +1,54 @@
+es:
+  refinery:
+    plugins:
+      volunteer_categories:
+        title: Volunteer Categories
+      htcs:
+        title: Htcs
+    volunteer_categories:
+      admin:
+        volunteer_categories:
+          actions:
+            create_new: Crear nuevo volunteer category
+            reorder: Reordenar volunteer categories
+            reorder_done: Reordenación de volunteer categories completada
+          records:
+            title: Volunteer Categories
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay volunteer categories todavía. Pulsa en "Crear nuevo
+              Volunteer Category" para crear tu primer volunteer category.
+          volunteer_category:
+            view_live_html: Ver este volunteer category como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este volunteer category
+            delete: Borrar este volunteer category para siempre
+      volunteer_categories:
+        show:
+          other: Otros volunteer categories
+    htcs:
+      admin:
+        htcs:
+          actions:
+            create_new: Crear nuevo htc
+            reorder: Reordenar htcs
+            reorder_done: Reordenación de htcs completada
+          records:
+            title: Htcs
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay htcs todavía. Pulsa en "Crear nuevo Htc" para crear
+              tu primer htc.
+          htc:
+            view_live_html: Ver este htc como abierto al público <br/><em>(abre en
+              ventana nueva)</em>
+            edit: Editar este htc
+            delete: Borrar este htc para siempre
+      htcs:
+        show:
+          other: Otros htcs
+  activerecord:
+    attributes:
+      refinery/volunteer_categories/volunteer_category:
+        name: Name
+        sequence: Sequence
+      refinery/htcs/htc:
+        name: Name

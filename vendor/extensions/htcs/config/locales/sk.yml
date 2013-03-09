@@ -1,0 +1,53 @@
+sk:
+  refinery:
+    plugins:
+      volunteer_categories:
+        title: Volunteer Categories
+      htcs:
+        title: Htcs
+    volunteer_categories:
+      admin:
+        volunteer_categories:
+          actions:
+            create_new: Pridať Volunteer Category
+            reorder: Preusporiadať Volunteer Categories
+            reorder_done: Koniec radenia Volunteer Categories
+          records:
+            title: Volunteer Categories
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Volunteer Categories. Kliknite na
+              "Pridať Volunteer Category" pre pridanie prvého volunteer category.
+          volunteer_category:
+            view_live_html: Zobraziť náhľad volunteer category<br/><em>(otvorí sa
+              v novom okne)</em>
+            edit: Upraviť volunteer category
+            delete: Zmazať volunteer category
+      volunteer_categories:
+        show:
+          other: Daľšie Volunteer Categories
+    htcs:
+      admin:
+        htcs:
+          actions:
+            create_new: Pridať Htc
+            reorder: Preusporiadať Htcs
+            reorder_done: Koniec radenia Htcs
+          records:
+            title: Htcs
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Htcs. Kliknite na "Pridať Htc" pre
+              pridanie prvého htc.
+          htc:
+            view_live_html: Zobraziť náhľad htc<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť htc
+            delete: Zmazať htc
+      htcs:
+        show:
+          other: Daľšie Htcs
+  activerecord:
+    attributes:
+      refinery/volunteer_categories/volunteer_category:
+        name: Name
+        sequence: Sequence
+      refinery/htcs/htc:
+        name: Name

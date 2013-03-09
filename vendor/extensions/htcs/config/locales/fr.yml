@@ -1,0 +1,54 @@
+fr:
+  refinery:
+    plugins:
+      volunteer_categories:
+        title: Volunteer Categories
+      htcs:
+        title: Htcs
+    volunteer_categories:
+      admin:
+        volunteer_categories:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Volunteer Category
+            reorder: Réordonner les Volunteer Categories
+            reorder_done: Fin de réordonnancement des Volunteer Categories
+          records:
+            title: Volunteer Categories
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Volunteer Category. Cliquer
+              sur "Créer un(e) nouve(au/l/lle) Volunteer Category" pour créer votre
+              premi(er/ère) volunteer category.
+          volunteer_category:
+            view_live_html: Voir ce(t/tte) volunteer category <br/><em>(Ouvre une
+              nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) volunteer category
+            delete: Supprimer définitivement ce(t/tte) volunteer category
+      volunteer_categories:
+        show:
+          other: Autres Volunteer Categories
+    htcs:
+      admin:
+        htcs:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Htc
+            reorder: Réordonner les Htcs
+            reorder_done: Fin de réordonnancement des Htcs
+          records:
+            title: Htcs
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Htc. Cliquer sur "Créer un(e)
+              nouve(au/l/lle) Htc" pour créer votre premi(er/ère) htc.
+          htc:
+            view_live_html: Voir ce(t/tte) htc <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) htc
+            delete: Supprimer définitivement ce(t/tte) htc
+      htcs:
+        show:
+          other: Autres Htcs
+  activerecord:
+    attributes:
+      refinery/volunteer_categories/volunteer_category:
+        name: Name
+        sequence: Sequence
+      refinery/htcs/htc:
+        name: Name
