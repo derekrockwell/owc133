@@ -5,16 +5,27 @@
     dom_id ||= 'menu'
     css = [(css || 'menu clearfix')].flatten.join(' ')
     hide_children = Refinery::Core.menu_hide_children if hide_children.nil?
--%>
-<nav id='<%= dom_id %>' class='<%= css %>'>
-  <ul>
-    <%= render :partial => '/refinery/menu_branch', :collection => roots,
-               :locals => {
+    -%>
+    <div class="navbar transparent navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to Refinery::Core.site_name, refinery.root_path, :class => 'brand' %>
+          <%= render 'refinery/navbar_button' unless @page.slug == 'home' %>
+
+          <nav id='<%= dom_id %>' class='<%= css %> nav pull-right'>
+            <div class="nav-collapse">
+              <ul class="nav">
+                <%= render :partial => '/refinery/menu_branch', :collection => roots,
+                :locals => {
                  :hide_children => hide_children,
                  :sibling_count => (roots.length - 1),
                  :menu_levels => local_assigns[:menu_levels],
-                 :apply_css => true #if you don't care about class='first' class='last' or class='selected' set apply_css to false for speed.
-               } -%>
-  </ul>
-</nav>
-<% end -%>
+                       :apply_css => true #if you don't care about class='first' class='last' or class='selected' set apply_css to false for speed.
+                     } unless @page.slug == 'home' -%>
+                   </ul>
+                 </div>
+               </nav>
+             </div>
+           </div>
+         </div>
+         <% end -%>
