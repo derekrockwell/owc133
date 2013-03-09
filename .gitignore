@@ -97,4 +97,5 @@ vendor/extensions/**/spec/dummy
 /config/application.yml
 
 # Ignore Sublime project file
+sublime-project.sublime-workspace
 sublime-project
