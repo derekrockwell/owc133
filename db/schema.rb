@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130308053116) do
+ActiveRecord::Schema.define(:version => 20130308223128) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -135,6 +135,37 @@ ActiveRecord::Schema.define(:version => 20130308053116) do
   end
 
   add_index "refinery_inquiries_inquiries", ["id"], :name => "index_refinery_inquiries_inquiries_on_id"
+
+  create_table "refinery_menus", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "permatitle"
+  end
+
+  add_index "refinery_menus", ["permatitle"], :name => "index_refinery_page_menus_on_permatitle", :unique => true
+
+  create_table "refinery_menus_links", :force => true do |t|
+    t.integer "parent_id"
+    t.integer "lft"
+    t.integer "rgt"
+    t.integer "depth"
+    t.integer "refinery_menu_id"
+    t.string  "menu_match"
+    t.integer "refinery_resource_id"
+    t.string  "refinery_resource_type"
+    t.string  "title_attribute"
+    t.string  "custom_url"
+    t.string  "label"
+    t.string  "id_attribute"
+    t.string  "class_attribute"
+  end
+
+  add_index "refinery_menus_links", ["depth"], :name => "index_refinery_page_positions_on_depth"
+  add_index "refinery_menus_links", ["id"], :name => "index_refinery_page_positions_on_id"
+  add_index "refinery_menus_links", ["lft"], :name => "index_refinery_page_positions_on_lft"
+  add_index "refinery_menus_links", ["parent_id"], :name => "index_refinery_page_positions_on_parent_id"
+  add_index "refinery_menus_links", ["rgt"], :name => "index_refinery_page_positions_on_rgt"
 
   create_table "refinery_news_item_translations", :force => true do |t|
     t.integer  "refinery_news_item_id"
