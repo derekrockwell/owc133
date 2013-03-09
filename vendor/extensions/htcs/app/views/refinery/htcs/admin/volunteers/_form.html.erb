@@ -1,0 +1,17 @@
+<%= form_for [refinery, :htcs_admin, @volunteer] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @volunteer,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :first_name -%>
+    <%= f.text_field :first_name, :class => 'larger widest'  -%>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.volunteers.admin.volunteers.volunteer'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @volunteer.first_name) %>
+<% end -%>

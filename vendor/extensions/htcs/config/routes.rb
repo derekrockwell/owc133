@@ -50,4 +50,21 @@ Refinery::Core::Engine.routes.append do
     end
   end
 
+
+  # Frontend routes
+  namespace :htcs do
+    resources :volunteers, :only => [:index, :show]
+  end
+
+  # Admin routes
+  namespace :htcs, :path => '' do
+    namespace :admin, :path => 'refinery/htcs' do
+      resources :volunteers, :except => :show do
+        collection do
+          post :update_positions
+        end
+      end
+    end
+  end
+
 end

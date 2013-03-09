@@ -1,6 +1,8 @@
 nl:
   refinery:
     plugins:
+      volunteers:
+        title: Volunteers
       work_hours:
         title: Work Hours
       volunteer_categories:
@@ -9,6 +11,21 @@ nl:
         title: Htcs
     htcs:
       admin:
+        volunteers:
+          actions:
+            create_new: Maak een nieuwe Volunteer
+            reorder: Wijzig de volgorde van de Volunteers
+            reorder_done: Klaar met het wijzingen van de volgorde van de Volunteers
+          records:
+            title: Volunteers
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Volunteers. Druk op 'Maak een nieuwe Volunteer'
+              om de eerste aan te maken.
+          volunteer:
+            view_live_html: Bekijk deze volunteer op de website <br/><em>(opent een
+              nieuw venster)</em>
+            edit: Bewerk deze volunteer
+            delete: Verwijder deze volunteer voor eeuwig
         work_hours:
           actions:
             create_new: Maak een nieuwe Work Hour
@@ -55,6 +72,9 @@ nl:
               venster)</em>
             edit: Bewerk deze htc
             delete: Verwijder deze htc voor eeuwig
+      volunteers:
+        show:
+          other: Andere Volunteers
       work_hours:
         show:
           other: Andere Work Hours
@@ -66,6 +86,8 @@ nl:
           other: Andere Htcs
   activerecord:
     attributes:
+      refinery/htcs/volunteer:
+        first_name: First Name
       refinery/htcs/work_hour:
         user_id: User
         volunteer_category_id: Volunteer Category

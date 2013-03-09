@@ -1,6 +1,8 @@
 es:
   refinery:
     plugins:
+      volunteers:
+        title: Volunteers
       work_hours:
         title: Work Hours
       volunteer_categories:
@@ -9,6 +11,21 @@ es:
         title: Htcs
     htcs:
       admin:
+        volunteers:
+          actions:
+            create_new: Crear nuevo volunteer
+            reorder: Reordenar volunteers
+            reorder_done: Reordenación de volunteers completada
+          records:
+            title: Volunteers
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay volunteers todavía. Pulsa en "Crear nuevo Volunteer"
+              para crear tu primer volunteer.
+          volunteer:
+            view_live_html: Ver este volunteer como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este volunteer
+            delete: Borrar este volunteer para siempre
         work_hours:
           actions:
             create_new: Crear nuevo work hour
@@ -54,6 +71,9 @@ es:
               ventana nueva)</em>
             edit: Editar este htc
             delete: Borrar este htc para siempre
+      volunteers:
+        show:
+          other: Otros volunteers
       work_hours:
         show:
           other: Otros work hours
@@ -65,6 +85,8 @@ es:
           other: Otros htcs
   activerecord:
     attributes:
+      refinery/htcs/volunteer:
+        first_name: First Name
       refinery/htcs/work_hour:
         user_id: User
         volunteer_category_id: Volunteer Category

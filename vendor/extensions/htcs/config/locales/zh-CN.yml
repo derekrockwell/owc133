@@ -1,6 +1,8 @@
 zh-CN:
   refinery:
     plugins:
+      volunteers:
+        title: Volunteers
       work_hours:
         title: Work Hours
       volunteer_categories:
@@ -9,6 +11,19 @@ zh-CN:
         title: Htcs
     htcs:
       admin:
+        volunteers:
+          actions:
+            create_new: 建立新的 Volunteer
+            reorder: 对 Volunteers 重新排序
+            reorder_done: 对 Volunteers 的重新排序结束
+          records:
+            title: Volunteers
+            sorry_no_results: 对不起，未找到结果。
+            no_items_yet: 目前没有 Volunteers . 点击 "Add New Volunteer" 创建一个volunteer.
+          volunteer:
+            view_live_html: 查看 volunteer 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 volunteer
+            delete: 永久删除 volunteer
         work_hours:
           actions:
             create_new: 建立新的 Work Hour
@@ -49,6 +64,9 @@ zh-CN:
             view_live_html: 查看 htc 的最新内容.<br/><em>(新窗口中打开)</em>
             edit: 编辑 htc
             delete: 永久删除 htc
+      volunteers:
+        show:
+          other: 其他 Volunteers
       work_hours:
         show:
           other: 其他 Work Hours
@@ -60,6 +78,8 @@ zh-CN:
           other: 其他 Htcs
   activerecord:
     attributes:
+      refinery/htcs/volunteer:
+        first_name: First Name
       refinery/htcs/work_hour:
         user_id: User
         volunteer_category_id: Volunteer Category

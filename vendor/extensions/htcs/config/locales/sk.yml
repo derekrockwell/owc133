@@ -1,6 +1,8 @@
 sk:
   refinery:
     plugins:
+      volunteers:
+        title: Volunteers
       work_hours:
         title: Work Hours
       volunteer_categories:
@@ -9,6 +11,20 @@ sk:
         title: Htcs
     htcs:
       admin:
+        volunteers:
+          actions:
+            create_new: Pridať Volunteer
+            reorder: Preusporiadať Volunteers
+            reorder_done: Koniec radenia Volunteers
+          records:
+            title: Volunteers
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Volunteers. Kliknite na "Pridať
+              Volunteer" pre pridanie prvého volunteer.
+          volunteer:
+            view_live_html: Zobraziť náhľad volunteer<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť volunteer
+            delete: Zmazať volunteer
         work_hours:
           actions:
             create_new: Pridať Work Hour
@@ -52,6 +68,9 @@ sk:
             view_live_html: Zobraziť náhľad htc<br/><em>(otvorí sa v novom okne)</em>
             edit: Upraviť htc
             delete: Zmazať htc
+      volunteers:
+        show:
+          other: Daľšie Volunteers
       work_hours:
         show:
           other: Daľšie Work Hours
@@ -63,6 +82,8 @@ sk:
           other: Daľšie Htcs
   activerecord:
     attributes:
+      refinery/htcs/volunteer:
+        first_name: First Name
       refinery/htcs/work_hour:
         user_id: User
         volunteer_category_id: Volunteer Category

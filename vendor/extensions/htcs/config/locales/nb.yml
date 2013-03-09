@@ -1,6 +1,8 @@
 nb:
   refinery:
     plugins:
+      volunteers:
+        title: Volunteers
       work_hours:
         title: Work Hours
       volunteer_categories:
@@ -9,6 +11,21 @@ nb:
         title: Htcs
     htcs:
       admin:
+        volunteers:
+          actions:
+            create_new: Lag en ny Volunteer
+            reorder: Endre rekkefølgen på Volunteers
+            reorder_done: Ferdig å endre rekkefølgen Volunteers
+          records:
+            title: Volunteers
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Volunteers enda. Klikk på "Lag en ny Volunteer"
+              for å legge til din første volunteer.
+          volunteer:
+            view_live_html: Vis hvordan denne volunteer ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne volunteer
+            delete: Fjern denne volunteer permanent
         work_hours:
           actions:
             create_new: Lag en ny Work Hour
@@ -54,6 +71,9 @@ nb:
               i et nytt vindu)</em>
             edit: Rediger denne htc
             delete: Fjern denne htc permanent
+      volunteers:
+        show:
+          other: Andre Volunteers
       work_hours:
         show:
           other: Andre Work Hours
@@ -65,6 +85,8 @@ nb:
           other: Andre Htcs
   activerecord:
     attributes:
+      refinery/htcs/volunteer:
+        first_name: First Name
       refinery/htcs/work_hour:
         user_id: User
         volunteer_category_id: Volunteer Category
