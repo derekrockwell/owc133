@@ -9,6 +9,8 @@ gem 'anjlab-bootstrap-rails', '>= 2.2', :require => 'bootstrap-rails'
 group :development, :test do
 	gem 'sqlite3'
 	gem "quiet_assets", ">= 1.0.1"
+	gem 'rspec-rails'
+	gem 'refinerycms-testing', '~> 2.0.3'
 end
 
 group :staging, :production do
@@ -44,3 +46,5 @@ gem "refinerycms-news", '~> 2.0.0'
 gem 'heroku'
 
 
+
+gem 'refinerycms-htcs', :path => 'vendor/extensions'

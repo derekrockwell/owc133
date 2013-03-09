@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130308223128) do
+ActiveRecord::Schema.define(:version => 20130309165642) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -85,6 +85,13 @@ ActiveRecord::Schema.define(:version => 20130308223128) do
     t.string   "address"
     t.string   "url"
     t.string   "phone"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "refinery_htcs", :force => true do |t|
+    t.string   "name"
     t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -317,6 +324,14 @@ ActiveRecord::Schema.define(:version => 20130308223128) do
   end
 
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
+
+  create_table "refinery_volunteer_categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "sequence"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "seo_meta", :force => true do |t|
     t.integer  "seo_meta_id"
