@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="htcs">
+    <% @htcs.each do |htc| %>
+      <li>
+        <%= link_to htc.name, refinery.htcs_htc_path(htc) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

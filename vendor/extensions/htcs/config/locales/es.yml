@@ -1,0 +1,78 @@
+es:
+  refinery:
+    plugins:
+      work_hours:
+        title: Work Hours
+      volunteer_categories:
+        title: Volunteer Categories
+      htcs:
+        title: Htcs
+    htcs:
+      admin:
+        work_hours:
+          actions:
+            create_new: Crear nuevo work hour
+            reorder: Reordenar work hours
+            reorder_done: Reordenación de work hours completada
+          records:
+            title: Work Hours
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay work hours todavía. Pulsa en "Crear nuevo Work Hour"
+              para crear tu primer work hour.
+          work_hour:
+            view_live_html: Ver este work hour como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este work hour
+            delete: Borrar este work hour para siempre
+        volunteer_categories:
+          actions:
+            create_new: Crear nuevo volunteer category
+            reorder: Reordenar volunteer categories
+            reorder_done: Reordenación de volunteer categories completada
+          records:
+            title: Volunteer Categories
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay volunteer categories todavía. Pulsa en "Crear nuevo
+              Volunteer Category" para crear tu primer volunteer category.
+          volunteer_category:
+            view_live_html: Ver este volunteer category como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este volunteer category
+            delete: Borrar este volunteer category para siempre
+        htcs:
+          actions:
+            create_new: Crear nuevo htc
+            reorder: Reordenar htcs
+            reorder_done: Reordenación de htcs completada
+          records:
+            title: Htcs
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay htcs todavía. Pulsa en "Crear nuevo Htc" para crear
+              tu primer htc.
+          htc:
+            view_live_html: Ver este htc como abierto al público <br/><em>(abre en
+              ventana nueva)</em>
+            edit: Editar este htc
+            delete: Borrar este htc para siempre
+      work_hours:
+        show:
+          other: Otros work hours
+      volunteer_categories:
+        show:
+          other: Otros volunteer categories
+      htcs:
+        show:
+          other: Otros htcs
+  activerecord:
+    attributes:
+      refinery/htcs/work_hour:
+        user_id: User
+        volunteer_category_id: Volunteer Category
+        activity_date: Activity Date
+        hours: Hours
+        miles: Miles
+      refinery/htcs/volunteer_category:
+        name: Name
+        sequence: Sequence
+      refinery/htcs/htc:
+        name: Name

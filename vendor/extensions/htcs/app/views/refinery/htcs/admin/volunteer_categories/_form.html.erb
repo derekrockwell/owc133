@@ -1,0 +1,23 @@
+<%= form_for [refinery, :htcs_admin, @volunteer_category] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @volunteer_category,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest'  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :sequence -%>
+    <%= f.number_field :sequence  -%>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.volunteer_categories.admin.volunteer_categories.volunteer_category'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @volunteer_category.name) %>
+<% end -%>

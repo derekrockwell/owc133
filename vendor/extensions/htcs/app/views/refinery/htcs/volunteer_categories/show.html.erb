@@ -1,0 +1,33 @@
+<% content_for :body_content_title do %>
+  <%= @volunteer_category.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @volunteer_category.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Sequence</h1>
+    <p>
+      <%=raw @volunteer_category.sequence %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="volunteer_categories">
+      <% @volunteer_categories.each do |volunteer_category| %>
+        <li>
+          <%= link_to volunteer_category.name, refinery.htcs_volunteer_category_path(volunteer_category) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

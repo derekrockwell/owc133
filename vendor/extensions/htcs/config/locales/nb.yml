@@ -1,0 +1,78 @@
+nb:
+  refinery:
+    plugins:
+      work_hours:
+        title: Work Hours
+      volunteer_categories:
+        title: Volunteer Categories
+      htcs:
+        title: Htcs
+    htcs:
+      admin:
+        work_hours:
+          actions:
+            create_new: Lag en ny Work Hour
+            reorder: Endre rekkefølgen på Work Hours
+            reorder_done: Ferdig å endre rekkefølgen Work Hours
+          records:
+            title: Work Hours
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Work Hours enda. Klikk på "Lag en ny Work Hour"
+              for å legge til din første work hour.
+          work_hour:
+            view_live_html: Vis hvordan denne work hour ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne work hour
+            delete: Fjern denne work hour permanent
+        volunteer_categories:
+          actions:
+            create_new: Lag en ny Volunteer Category
+            reorder: Endre rekkefølgen på Volunteer Categories
+            reorder_done: Ferdig å endre rekkefølgen Volunteer Categories
+          records:
+            title: Volunteer Categories
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Volunteer Categories enda. Klikk på "Lag en
+              ny Volunteer Category" for å legge til din første volunteer category.
+          volunteer_category:
+            view_live_html: Vis hvordan denne volunteer category ser ut offentlig
+              <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne volunteer category
+            delete: Fjern denne volunteer category permanent
+        htcs:
+          actions:
+            create_new: Lag en ny Htc
+            reorder: Endre rekkefølgen på Htcs
+            reorder_done: Ferdig å endre rekkefølgen Htcs
+          records:
+            title: Htcs
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Htcs enda. Klikk på "Lag en ny Htc" for å legge
+              til din første htc.
+          htc:
+            view_live_html: Vis hvordan denne htc ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne htc
+            delete: Fjern denne htc permanent
+      work_hours:
+        show:
+          other: Andre Work Hours
+      volunteer_categories:
+        show:
+          other: Andre Volunteer Categories
+      htcs:
+        show:
+          other: Andre Htcs
+  activerecord:
+    attributes:
+      refinery/htcs/work_hour:
+        user_id: User
+        volunteer_category_id: Volunteer Category
+        activity_date: Activity Date
+        hours: Hours
+        miles: Miles
+      refinery/htcs/volunteer_category:
+        name: Name
+        sequence: Sequence
+      refinery/htcs/htc:
+        name: Name
