@@ -23,11 +23,15 @@ Refinery::News::Engine.load_seed
 
 # Added by Refinery CMS Venues extension
 Refinery::Calendar::Engine.load_seed
-      # Added by Refinery CMS Page Menus extension
-      Refinery::Menus::Engine.load_seed
+
+# Added by Refinery CMS Page Menus extension
+Refinery::Menus::Engine.load_seed
 
 
 puts "loading custom menus, pages, etc"
 
 puts "ensuring default custom menu"
 Refinery::Menus::Menu.create(title: "header", permatitle: "header")
+
+puts "create base custom pages and their parts"
+
