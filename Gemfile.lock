@@ -13,6 +13,12 @@ GIT
     refinerycms-calendar (2.0.2)
       refinerycms-core (~> 2.0)
 
+PATH
+  remote: vendor/extensions
+  specs:
+    refinerycms-htcs (1.0)
+      refinerycms-core (~> 2.0.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -280,6 +286,7 @@ DEPENDENCIES
   refinerycms (~> 2.0.0)
   refinerycms-blog (~> 2.0.0)
   refinerycms-calendar (~> 2.0.0)!
+  refinerycms-htcs!
   refinerycms-i18n (~> 2.0.0)
   refinerycms-inquiries (~> 2.0.0)
   refinerycms-menus!

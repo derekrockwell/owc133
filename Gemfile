@@ -45,3 +45,5 @@ gem "refinerycms-news", '~> 2.0.0'
 gem 'heroku'
 
 
+
+gem 'refinerycms-htcs', :path => 'vendor/extensions'

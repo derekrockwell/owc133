@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130308223128) do
+ActiveRecord::Schema.define(:version => 20130309185802) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -88,6 +88,32 @@ ActiveRecord::Schema.define(:version => 20130308223128) do
     t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "refinery_htcs", :force => true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "refinery_htcs_volunteer_categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "sequence"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "refinery_htcs_work_hours", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "volunteer_category_id"
+    t.date     "activity_date"
+    t.float    "hours"
+    t.float    "miles"
+    t.integer  "position"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   create_table "refinery_image_page_translations", :force => true do |t|
