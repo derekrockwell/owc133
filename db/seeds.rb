@@ -35,6 +35,3 @@ Refinery::Menus::Menu.create(title: "header", permatitle: "header")
 
 puts "create base custom pages and their parts"
 
-
-# Added by Refinery CMS Htcs extension
-Refinery::Htcs::Engine.load_seed
