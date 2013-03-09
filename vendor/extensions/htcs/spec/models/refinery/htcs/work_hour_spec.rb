@@ -5,7 +5,7 @@ module Refinery
     describe WorkHour do
       describe "validations" do
         let(:user) {  }
-        let(:patient_category) { Refinery::VolunteerCategories::VolunteerCategory.find_or_create_by_name("Patient & Family Care")}
+        let(:patient_category) { VolunteerCategory.find_or_create_by_name("Patient & Family Care")}
         let(:work_hour_attributes) { { :user_id => 1, :volunteer_category => patient_category, :activity_date => Date.today.strftime('%Y-%m-%d'), :hours => 2 } }
         subject { WorkHour.new(work_hour_attributes) }
 
