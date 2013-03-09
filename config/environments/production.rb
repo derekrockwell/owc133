@@ -52,12 +52,12 @@ Owc133::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    :address   => "smtp.mandrillapp.com",
-    :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
+    :address   => ENV["EMAIL_ADDRESS"],
+    :port      => 2525,
     :enable_starttls_auto => true, # detects and uses STARTTLS
-    :user_name => ENV["MANDRILL_USERNAME"],
-    :password  => ENV["MANDRILL_PASSWORD"], # SMTP password is any valid API key
-    :authentication => 'login' # Mandrill supports 'plain' or 'login'
+    :user_name => ENV["EMAIL_USERNAME"],
+    :password  => ENV["EMAIL_PASSWORD"], # SMTP password is any valid API key
+    :authentication => :plain#'login' # Mandrill supports 'plain' or 'login'
   }
   # Enable threaded mode
   # config.threadsafe!
