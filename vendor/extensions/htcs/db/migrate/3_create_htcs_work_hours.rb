@@ -1,7 +1,7 @@
 class CreateHtcsWorkHours < ActiveRecord::Migration
 
   def up
-    create_table :refinery_htcs_work_hours do |t|
+    create_table :refinery_htcs_work_hours, :force => true do |t|
       t.integer :user_id
       t.integer :volunteer_category_id
       t.date :activity_date

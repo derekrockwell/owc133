@@ -1,7 +1,7 @@
 class CreateHtcsHtcs < ActiveRecord::Migration
 
   def up
-    create_table :refinery_htcs do |t|
+    create_table :refinery_htcs, :force => true do |t|
       t.string :name
       t.integer :position
 

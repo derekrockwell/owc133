@@ -1,7 +1,7 @@
 class CreateHtcsVolunteerCategories < ActiveRecord::Migration
 
   def up
-    create_table :refinery_htcs_volunteer_categories do |t|
+    create_table :refinery_htcs_volunteer_categories, :force => true do |t|
       t.string :name
       t.integer :sequence
       t.integer :position
