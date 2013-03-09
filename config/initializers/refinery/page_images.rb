@@ -1,3 +1,3 @@
 Refinery::PageImages.configure do |config|
-  # config.captions = false
+  config.captions = true
 end

@@ -1,0 +1,45 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="span3 well ">
+				<% @page.images.each do |image| %>
+				<div class="row-fluid pagination-centered">
+					<div class="span12">
+						<%= image_tag image.url, :class => "img img-polaroid" %>
+					</div>
+					<div class="span12">
+						<p class="muted">
+							<i>
+								"<%= strip_tags image.image_page.caption%>"
+							</i>
+						</p>
+					</div>
+				</div>
+				<% end %>
+			</div>
+
+			<div class="span9 well">
+				<div class="row-fluid">
+					<div class="span12">
+						<%= raw @page.content_for(:body) %>
+					</div>
+				</div>
+
+				<div class="row-fluid">
+					<div class="span8">
+						<h1>Get Contacted</h1>
+						<%= render "/refinery/inquiries/volunteer_inquiry" %>
+					</div>
+
+					<div class="span4">
+						<h1>Sign up</h1>
+						<p>More Rabbles</h1>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
