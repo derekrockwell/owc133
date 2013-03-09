@@ -15,10 +15,6 @@ group :staging, :production do
 	gem 'pg'
 	gem 'unicorn'
 	gem 'fog'
-end
-
-group :production do
-
 	gem 'newrelic_rpm'
 end
 
