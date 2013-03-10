@@ -1,4 +1,12 @@
-<h2>Not allowed in</h2>
+<div class="flower-header">
+</div>
+
+<div class="span3">
+
+ </div>
+ 
+ <div class="span7 offset1">
+    <h2>Not allowed in</h2>
 <% flash.each do |key, value| %>
 <div id='flash' class="flash flash_<%= key %>" style='visibility: hidden;' >
   <%= value %>
@@ -6,3 +14,4 @@
               :id => "flash_close" %>
 </div>
 <% end %>
+</div>

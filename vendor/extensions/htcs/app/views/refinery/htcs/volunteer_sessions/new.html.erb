@@ -1,3 +1,11 @@
+<div class="flower-header">
+</div>
+
+<div class="span3">
+
+ </div>
+ 
+ <div class="span7 offset1">
 <% if volunteer_signed_in? %>
   You are signed in as <%= current_volunteer.email %>. <%=link_to "Sign out", '/volunteers/sign_out', :method => :delete %>.
 <% else %>
@@ -10,3 +18,4 @@
   <div><%= f.submit "Sign in" %></div>
   <% end %>
 <% end %>
+</div>
