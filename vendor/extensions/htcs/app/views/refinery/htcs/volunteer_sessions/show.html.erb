@@ -1,5 +1,4 @@
 <h2>Not allowed in</h2>
-<% raise flash.inspect %>
 <% flash.each do |key, value| %>
 <div id='flash' class="flash flash_<%= key %>" style='visibility: hidden;' >
   <%= value %>

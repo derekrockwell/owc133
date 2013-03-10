@@ -1,0 +1,12 @@
+
+  <%= simple_form_for [refinery, :htcs, @work_hour] do |f| %>
+
+  <%= f.association :volunteer_category, collection: Refinery::Htcs::VolunteerCategory.all %>
+  <%= f.input :activity_date, placeholder: 'date' %>
+  <%= f.input :hours, placeholder: 'Hours' %>
+  <%= f.input :miles, placeholder:'Miles' %>
+
+  <%= f.submit 'Save' %>
+  
+
+  <% end %>
