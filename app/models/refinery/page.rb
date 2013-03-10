@@ -58,8 +58,10 @@ module Refinery
     before_save { |m| m.translation.save }
     before_create :ensure_locale, :if => proc { ::Refinery.i18n_enabled? }
     before_destroy :deletable?
+    before_destroy :remove_from_menus
     after_save :reposition_parts!, :expire_page_caching
     after_destroy :expire_page_caching
+    after_create :add_to_menu, :if => proc { !!parent && %w(why what when).include?(parent.slug) }
 
     class << self
       # Live pages are 'allowed' to be shown in the frontend of your website.
@@ -435,6 +437,16 @@ module Refinery
 
     private
 
+    def add_to_menu
+      menu = Menus::Menu.where(title: "#{parent.slug}_sidebar").first
+      Menus::MenuLink.new(refinery_menu_id: menu.id,refinery_resource_id: id, refinery_resource_type: "refinery_page").save
+    end
+
+    def remove_from_menus
+      Menus::MenuLink.where(refinery_resource_id: id).each do |menulink|
+        menulink.destroy
+      end
+    end
     # Make sures that a translation exists for this page.
     # The translation is set to the default frontend locale.
     def ensure_locale

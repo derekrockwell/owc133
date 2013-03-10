@@ -142,7 +142,7 @@ ActiveRecord::Schema.define(:version => 20130310020720) do
   add_index "refinery_htcs_volunteers", ["email"], :name => "index_refinery_htcs_volunteers_on_email", :unique => true
 
   create_table "refinery_htcs_work_hours", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "volunteer_id"
     t.integer  "volunteer_category_id"
     t.date     "activity_date"
     t.float    "hours"
@@ -380,17 +380,17 @@ ActiveRecord::Schema.define(:version => 20130310020720) do
 
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
 
-  create_table "roles_volunteers", :id => false, :force => true do |t|
-    t.integer "volunteer_id"
-    t.integer "role_id"
-  end
-  
   create_table "refinery_volunteer_categories", :force => true do |t|
     t.string   "name"
     t.integer  "sequence"
     t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "roles_volunteers", :id => false, :force => true do |t|
+    t.integer "volunteer_id"
+    t.integer "role_id"
   end
 
   create_table "seo_meta", :force => true do |t|

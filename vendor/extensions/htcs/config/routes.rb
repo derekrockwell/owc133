@@ -36,7 +36,7 @@ Refinery::Core::Engine.routes.append do
 
   # Frontend routes
   namespace :htcs do
-    resources :work_hours, :only => [:index, :show]
+    resources :work_hours
   end
 
   # Admin routes

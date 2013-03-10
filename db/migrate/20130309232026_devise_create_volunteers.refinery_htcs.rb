@@ -18,7 +18,6 @@ class DeviseCreateVolunteers < ActiveRecord::Migration
     create_table :refinery_htcs_roles do |t|
       t.string :title
     end
-    Refinery::Htcs::Role.new.tap { |role| role.title = 'Volunteer' }.save!
 
     create_table :refinery_htcs_volunteer_plugins do |t|
       t.integer :volunteer_id

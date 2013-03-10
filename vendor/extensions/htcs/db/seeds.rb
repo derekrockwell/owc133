@@ -140,3 +140,7 @@ Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Pet Therapy")
 Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Speakers Bereau")
 Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Massage Therapy")
 Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Holiday Lights and Limos")
+
+Refinery::Htcs::Role.find_or_create_by_title("Volunteer")
+
+Refinery::Htcs::VolunteerPlugin.find_or_create_by_name("Volunteer")
