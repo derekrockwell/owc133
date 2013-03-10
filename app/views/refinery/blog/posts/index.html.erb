@@ -13,7 +13,6 @@
 
       <div class="span9 content">
         <% content_for :body_content_left do %>
-
         <%= raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) if Refinery::Pages.default_parts.any? %>
 
         <% if @posts.any? %>
