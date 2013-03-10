@@ -8,6 +8,10 @@ module Refinery
       def index
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @work_hour in the line below:
+
+        # Need to find all WorkHours for the logged-in Volunteer (Devise user)
+        @work_hours = current_volunteer.work_hours
+
         present(@page)
       end
 

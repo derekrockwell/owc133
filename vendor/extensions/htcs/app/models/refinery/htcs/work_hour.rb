@@ -3,6 +3,8 @@ module Refinery
     class WorkHour < Refinery::Core::BaseModel
       belongs_to :volunteer_category
 
+      belongs_to :volunteer
+
       validates_presence_of :volunteer_id, :volunteer_category_id, :activity_date, :hours
 
       attr_accessible :volunteer_id, :volunteer_category, :volunteer_category_id, :activity_date, :hours, :miles, :position

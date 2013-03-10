@@ -10,6 +10,8 @@ module Refinery
 
       has_and_belongs_to_many :volunteer_categories, :join_table => :refinery_htcs_volunteer_interests
 
+      has_many :work_hours
+
       acts_as_indexed :fields => [:first_name]
 
       validates_presence_of :first_name, :last_name, :zip
