@@ -1,6 +1,7 @@
 <div class="flower-header">
 </div>
 
+
 <% content_for :body_content_left do %>
   <div id="show_blog_post">
     <%= render 'post' %>
@@ -22,3 +23,4 @@
   <script src="http://w.sharethis.com/button/buttons.js"></script>
   <script>stLight.options({publisher:'<%= Blog::Post::ShareThis.key %>'});</script>
 <% end if Refinery::Blog::Post::ShareThis.enabled? %>
+
