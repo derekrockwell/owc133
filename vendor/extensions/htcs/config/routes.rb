@@ -1,4 +1,9 @@
 Refinery::Core::Engine.routes.append do
+  devise_for :volunteers, :controllers => { :sessions => 'refinery/htcs/volunteer_sessions' }, :class_name => 'Refinery::Htcs::Volunteer', :skip_routes => true
+
+  root :to => "refinery/htcs/volunteer_sessions#new"
+  post "/volunteers/sign_in"    => "refinery/htcs/volunteer_sessions#create"
+  delete "/volunteers/sign_out" => "refinery/htcs/volunteer_sessions#destroy"
 
   # Frontend routes
   namespace :htcs do

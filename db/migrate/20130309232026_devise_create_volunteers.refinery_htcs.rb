@@ -20,7 +20,7 @@ class DeviseCreateVolunteers < ActiveRecord::Migration
     end
     Refinery::Htcs::Role.new.tap { |role| role.title = 'Volunteer' }.save!
 
-    create_table :volunteer_plugins do |t|
+    create_table :refinery_htcs_volunteer_plugins do |t|
       t.integer :volunteer_id
       t.string  :name
       t.integer :position
@@ -28,7 +28,7 @@ class DeviseCreateVolunteers < ActiveRecord::Migration
   end
 
   def down
-    drop_table :volunteer_plugins
+    drop_table :refinery_htcs_volunteer_plugins
     drop_table :refinery_htcs_roles
     drop_table :roles_volunteers
 
