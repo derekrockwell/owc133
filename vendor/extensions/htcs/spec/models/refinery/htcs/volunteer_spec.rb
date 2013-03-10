@@ -3,8 +3,9 @@ require 'spec_helper'
 module Refinery
   module Htcs
     describe Volunteer do
+      let(:valid_attributes) { { :first_name => "Vinnie", :last_name => "Volunteer", :email => 'vinnie@example.com', :zip => '55419' } }
+      
       describe "validations" do
-        let(:valid_attributes) { { :first_name => "Vinnie", :last_name => "Volunteer", :email => 'vinnie@example.com', :zip => '55419' } }
         subject do
           FactoryGirl.create(:volunteer, valid_attributes)
         end
@@ -13,30 +14,58 @@ module Refinery
         its(:errors) { should be_empty }
         
         it "should require a first name" do
-          Volunteer.new(valid_attributes.except(:first_name)).should_not be_valid
+          FactoryGirl.build(:volunteer, valid_attributes.merge(:first_name => '')).should_not be_valid
         end
 
         it "should require a last name" do
-          Volunteer.new(valid_attributes.except(:last_name)).should_not be_valid
+          FactoryGirl.build(:volunteer, valid_attributes.merge(:last_name => '')).should_not be_valid
         end
 
         it "should require a unique email" do
-          Volunteer.new(valid_attributes.except(:email)).should_not be_valid
-          volunteer1 = Volunteer.create!(valid_attributes)
-          Volunteer.new(valid_attributes).should_not be_valid
+          FactoryGirl.build(:volunteer, valid_attributes.merge(:email => '')).should_not be_valid
+          volunteer1 = FactoryGirl.create(:volunteer, valid_attributes)
+          FactoryGirl.build(:volunteer, valid_attributes).should_not be_valid
         end
 
         it "should require a zip code" do
-          Volunteer.new(valid_attributes.except(:zip)).should_not be_valid
+          FactoryGirl.build(:volunteer, valid_attributes.merge(:zip => '')).should_not be_valid
         end
       end
-    end
 
-    describe "initial registration" do
-      it "should be able to specify multiple volunteering interest categories"
-    end
+      describe "initial registration" do
+        it "should be able to specify multiple volunteering interest categories"
+      end
 
-    describe "work hour entries" do
+      describe "work hour entries" do
+      end
+
+      describe "confirmation workflow" do
+        it "should initialize to status 'pending' when first created" do
+          volunteer = FactoryGirl.create(:volunteer, valid_attributes)
+          volunteer.status.should == "pending"
+        end
+
+        it "should not be able to set the status via mass assignment" do
+          FactoryGirl.build(:volunteer, valid_attributes.merge(:status => 'active'))
+        end
+
+        it "should be able to be promoted to 'active'" do
+          volunteer = FactoryGirl.create(:volunteer, valid_attributes)
+          expect {
+            volunteer.promote!
+          }.to change(volunteer, :status).from('pending').to('active')
+        end
+
+        it "should send an invitation email when promoted to 'active'"
+
+        it "should be able to disable an 'active' volunteer" do
+          volunteer = FactoryGirl.create(:volunteer, valid_attributes)
+          volunteer.promote!
+          expect {
+            volunteer.disable!
+          }.to change(volunteer, :status).from('active').to('disabled')
+        end
+      end
     end
   end
 end

@@ -4,7 +4,12 @@ module Refinery
   module Htcs
     describe WorkHour do
       describe "validations" do
-        let(:volunteer) { Volunteer.create!(:first_name => "Vinnie", :last_name => "Volunteer", :zip => '12345', :email => 'vinnie@example.com') }
+        let(:volunteer) { 
+          v = Volunteer.new(:first_name => "Vinnie", :last_name => "Volunteer", :zip => '12345', :email => 'vinnie@example.com')
+          v.password = v.password_confirmation = "123456"
+          v.save!
+          v
+        }
         let(:patient_category) { VolunteerCategory.find_or_create_by_name("Patient & Family Care")}
         let(:work_hour_attributes) { { :volunteer_id => volunteer.id, :volunteer_category => patient_category, :activity_date => Date.today.strftime('%Y-%m-%d'), :hours => 2 } }
         subject { WorkHour.new(work_hour_attributes) }

@@ -254,6 +254,7 @@ DEPENDENCIES
   activerecord-jdbcpostgresql-adapter
   activerecord-jdbcsqlite3-adapter
   coffee-rails
+  devise
   guard-rspec (~> 0.7.0)
   guard-spork (~> 0.5.2)
   jquery-rails (~> 2.0.0)
