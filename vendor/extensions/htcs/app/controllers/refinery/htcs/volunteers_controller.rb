@@ -25,7 +25,7 @@ module Refinery
 
         if @volunteer.save
           @page = ::Refinery::Page.where(:slug => "thanks").first
-          redirect_to "/volunteer-information/thanks"
+          redirect_to "/volunteer-information/thank-you"
         else
           @page = ::Refinery::Page.where(:slug => 'volunteer-information').first
           render :new

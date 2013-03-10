@@ -32,13 +32,23 @@ Refinery::Menus::Menu.create(title: "when_sidebar", permatitle: "when_sidebar")
 Refinery::Menus::Menu.create(title: "volunteer_sidebar", permatitle: "volunteer_sidebar")
 
 puts "create base custom pages and their parts"
-Refinery::Page.create(title: "What", show_in_menu: true, view_template: "what")
-Refinery::Page.create(title: "Why", show_in_menu: true, view_template:"why")
-Refinery::Page.create(title: "When", show_in_menu: true, view_template: "when")
-Refinery::Page.create(title: "volunteer", show_in_menu: true, view_template:"volunteer")
-Refinery::Page.create(title: "volunteer_information", show_in_menu: true, view_template:"volunteer_information")
-Refinery::Page.create(title: "volunteer_thank_you", show_in_menu: true, view_template:"volunteer_thank_you") #sub of volunteer_information /thanks
+(Refinery.i18n_enabled? ? Refinery::I18n.frontend_locales : [:en]).each do |lang|
+  I18n.locale = lang
 
-
+  %w(What Why When Volunteer).each do |page|
+    url = "/#{page.downcase.gsub(' ','_')}"
+    if Refinery::Page.where(:link_url => url).empty?
+      page = Refinery::Page.create(
+        :title => page,
+        :deletable => false,
+        :view_template => page.downcase,
+        :menu_match => "^#{url}(\/|\/.+?|)$"
+      )
+      Refinery::Pages.default_parts.each_with_index do |default_page_part, index|
+        page.parts.create(:title => default_page_part, :body => nil, :position => index)
+      end
+    end
+  end
+end
 # Added by Refinery CMS Htcs extension
 Refinery::Htcs::Engine.load_seed

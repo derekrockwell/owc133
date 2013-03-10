@@ -99,6 +99,38 @@ end
   end
 end
 
+(Refinery.i18n_enabled? ? Refinery::I18n.frontend_locales : [:en]).each do |lang|
+  I18n.locale = lang
+
+  page = "Volunteer Information"
+  url = "/#{page.downcase.gsub('','_')}"
+  if Refinery::Page.where(:link_url => url).empty?
+      page = Refinery::Page.create(
+        :title => page,
+        :deletable => false,
+        :menu_match => "^#{url}(\/|\/.+?|)$"
+      )
+      Refinery::Pages.default_parts.each_with_index do |default_page_part, index|
+        page.parts.create(:title => default_page_part, :body => nil, :position => index)
+      end
+  end
+
+  parent = page
+  page = "Thank You"
+  url = "/#{page.downcase.gsub('','_')}"
+  if Refinery::Page.where(:link_url => url).empty?
+      page = Refinery::Page.create(
+        :title => page,
+        :deletable => false,
+        :parent_id => parent.id,
+        :menu_match => "^#{url}(\/|\/.+?|)$"
+      )
+      Refinery::Pages.default_parts.each_with_index do |default_page_part, index|
+        page.parts.create(:title => default_page_part, :body => nil, :position => index)
+      end
+  end
+end
+
 Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Patient and Family Care")
 Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Bereavement")
 Refinery::Htcs::VolunteerCategory.find_or_create_by_name("Administrative Support")
