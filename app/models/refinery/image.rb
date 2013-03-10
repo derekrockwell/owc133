@@ -6,7 +6,10 @@ module Refinery
 
     include Images::Validators
 
+    has_one :image_page
+
     image_accessor :image
+
 
     validates :image, :presence  => true
     validates_with ImageSizeValidator

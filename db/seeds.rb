@@ -12,14 +12,8 @@ Refinery::Pages::Engine.load_seed
 # Added by Refinery CMS Blog engine
 Refinery::Blog::Engine.load_seed
 
-# Added by Refinery CMS Inquiries engine
-Refinery::Inquiries::Engine.load_seed
-
 # Added by Refinery CMS Search engine
 Refinery::Search::Engine.load_seed
-
-# Added by Refinery CMS News engine
-Refinery::News::Engine.load_seed
 
 # Added by Refinery CMS Venues extension
 Refinery::Calendar::Engine.load_seed
@@ -35,6 +29,7 @@ Refinery::Menus::Menu.create(title: "header", permatitle: "header")
 Refinery::Menus::Menu.create(title: "why_sidebar", permatitle: "why_sidebar")
 Refinery::Menus::Menu.create(title: "what_sidebar", permatitle: "what_sidebar")
 Refinery::Menus::Menu.create(title: "when_sidebar", permatitle: "when_sidebar")
+Refinery::Menus::Menu.create(title: "volunteer_sidebar", permatitle: "volunteer_sidebar")
 puts "create base custom pages and their parts"
 
 

@@ -6,7 +6,9 @@ module Refinery
 		  devise :database_authenticatable, :registerable,
 		         :recoverable, :rememberable, :validatable, :authentication_keys => ["email"]
 
-      attr_accessible :first_name, :last_name, :phone_number, :email, :address, :city, :state, :zip, :position, :password, :remember_me
+      attr_accessible :volunteer_category_ids, :first_name, :last_name, :phone_number, :email, :address, :city, :state, :zip, :position, :password, :remember_me
+
+      has_and_belongs_to_many :volunteer_categories, :join_table => :refinery_htcs_volunteer_interests
 
       acts_as_indexed :fields => [:first_name]
 
