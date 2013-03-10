@@ -7,6 +7,13 @@
   <div class='field'>
     <%= f.label :first_name -%>
     <%= f.text_field :first_name, :class => 'larger widest'  -%>
+    <%= f.label :last_name -%>
+    <%= f.text_field :last_name, :class => 'larger widest'  -%>
+    <% if @volunteer.status == 'pending' %>
+      <%= f.label :promote -%>
+      <%= check_box_tag "volunteer[promote]" -%> 
+    <% end %>
+
 
   </div>
   

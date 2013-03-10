@@ -3,7 +3,13 @@
 <% end %>
 <div class='pagination_container'>
   <% if @work_hours.any? %>
+  <% @sum_hours = 0 %>
+  <table class="table" style="width:100%">
+    <tr><th>Volunteer</th><th>Category</th><th>Date</th><th>Hours</th><th>Miles</th><th>Actions</th></tr>
     <%= render 'work_hours' %>
+  </table>
+
+<%= raw("Total Hours #{@sum_hours}") %>
   <% else %>
     <p>
       <% unless searching? %>

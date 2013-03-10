@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130310020720) do
+ActiveRecord::Schema.define(:version => 20130310075708) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -131,12 +131,18 @@ ActiveRecord::Schema.define(:version => 20130310020720) do
     t.string   "zip"
     t.string   "status"
     t.integer  "position"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
+    t.string   "encrypted_password",                   :default => ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string   "invitation_token",       :limit => 60
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer  "invitation_limit"
+    t.integer  "invited_by_id"
+    t.string   "invited_by_type"
   end
 
   create_table "refinery_htcs_work_hours", :force => true do |t|

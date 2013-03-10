@@ -1,9 +1,21 @@
-<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(work_hour) -%>">
-  <span class='title'>
-    <%= work_hour. %>
+<% unless work_hour.volunteer_id == @last_volunteer_id %>
+  <tr class='record' style="background: #AAA;">
+    <td colspan='3'>
+      <%= work_hour.volunteer.first_name %>
+    </td>
+    <td><%= @work_hours.inject(0) {|sum, wh| sum += wh.hours if wh.volunteer_id == work_hour.volunteer_id; sum } %></td>
+    <td><%= @work_hours.inject(0) {|sum, wh| sum += wh.miles if wh.volunteer_id == work_hour.volunteer_id; sum } %></td>
+    <td></td>
+  </tr>
+<% end %>
+<tr class='record <%= cycle("on", "on-hover") %>' id="<%= dom_id(work_hour) -%>">
+  <td>&nbsp;</td>
+  <td><%= work_hour.volunteer_category.name %></td>
+  <td><%= work_hour.activity_date %></td>
+    <td><%= work_hour.hours %></td>
+    <td><%= work_hour.miles %></td>
 
-  </span>
-  <span class='actions'>
+  <td>
     
     <%= link_to refinery_icon_tag("application_go.png"), refinery.htcs_work_hour_path(work_hour),
         :title => t('.view_live_html'),
@@ -14,7 +26,10 @@
     <%= link_to refinery_icon_tag("delete.png"), refinery.htcs_admin_work_hour_path(work_hour),
         :class => "cancel confirm-delete",
         :title => t('.delete'),
-        :confirm => t('message', :scope => 'refinery.admin.delete', :title => work_hour.),
+        :confirm => t('message', :scope => 'refinery.admin.delete', :title => work_hour.volunteer.first_name),
         :method => :delete %>
-  </span>
-</li>
+  </td>
+</tr>
+
+<% @last_volunteer_id = work_hour.volunteer_id %>
+<% @sum_hours += work_hour.hours %>

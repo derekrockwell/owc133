@@ -1,6 +1,8 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(volunteer) -%>">
   <span class='title'>
     <%= volunteer.first_name %>
+    <%= volunteer.last_name %> | Status:
+    <%= volunteer.status %>
 
   </span>
   <span class='actions'>

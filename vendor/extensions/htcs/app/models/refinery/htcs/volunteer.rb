@@ -6,7 +6,7 @@ module Refinery
 		  devise :database_authenticatable, :registerable,
 		         :recoverable, :rememberable, :validatable, :authentication_keys => ["email"]
 
-      attr_accessible :volunteer_category_ids, :first_name, :last_name, :phone_number, :email, :address, :city, :state, :zip, :position, :password, :remember_me
+      attr_accessible :volunteer_category_ids, :first_name, :last_name, :phone_number, :email, :address, :city, :state, :zip, :position, :password, :remember_me, :promote
 
       has_and_belongs_to_many :volunteer_categories, :join_table => :refinery_htcs_volunteer_interests
 
@@ -15,6 +15,9 @@ module Refinery
       acts_as_indexed :fields => [:first_name]
 
       before_validation :initialize_status, :on => :create
+
+      after_save :promote!, :if => :promote
+      attr_accessor  :promote
 
       validates_presence_of :first_name, :last_name, :zip
       validates :email, :presence => true, :uniqueness => true
@@ -76,7 +79,13 @@ module Refinery
 		  end
 
 		  def promote!
-			self.update_attribute(:status, 'active') if self.status == 'pending'
+
+		  	return unless self.status == 'pending'
+
+			# Ensure we don't loop forever
+			self.promote = false
+
+			self.status = 'active'
 			# Also change their password to changeme
 			self.password = self.password_confirmation = "changeme"
 			self.save!
