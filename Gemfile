@@ -10,6 +10,7 @@ gem "simple_form"
 group :development, :test do
 	gem 'sqlite3'
 	gem "quiet_assets", ">= 1.0.1"
+  gem "debugger"
 end
 
 group :staging, :production do
