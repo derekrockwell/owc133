@@ -5,11 +5,6 @@ Refinery::Core::Engine.routes.append do
   post "/volunteers/sign_in"    => "refinery/htcs/volunteer_sessions#create"
   delete "/volunteers/sign_out" => "refinery/htcs/volunteer_sessions#destroy"
 
-  # Frontend routes
-  namespace :htcs do
-    resources :htcs, :path => '', :only => [:index, :show]
-  end
-
   # Admin routes
   namespace :htcs, :path => '' do
     namespace :admin, :path => 'refinery' do
