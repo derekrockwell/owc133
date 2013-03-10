@@ -4,6 +4,7 @@
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span12">
+
       <div class="span3 sidebar">
         <%= render :partial => "/refinery/sidebar", :locals => {
           :roots => refinery_menu("blog_sidebar")
@@ -12,6 +13,7 @@
 
       <div class="span9 content">
         <% content_for :body_content_left do %>
+
         <%= raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) if Refinery::Pages.default_parts.any? %>
 
         <% if @posts.any? %>
@@ -31,6 +33,11 @@
 
         <%= render :partial => "/refinery/content_page" %>
         <% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
+      </div>
+
+      <div class="span9 well">
+        <% @post = @posts.first%>
+        <%= render 'post' %>
       </div>
     </div>
   </div>
