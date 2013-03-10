@@ -24,14 +24,29 @@ html, body {
 
 }
 
+.sidebar {
+    padding:2em;
+}
+
+.content {
+    padding:2em;
+}
+
+
 a {
     text-decoration: underline;
 }
 
 #page {
-    padding-bottom:100px;
+    padding-bottom:175px;
 }
 
+.flower-header {
+    height:250px;
+    width:100%;
+    background: url("/assets/Flowers_Header.jpg") center center;
+    overflow:hidden;
+}
 
 #footer {
 	background:#deebe1;
@@ -77,9 +92,8 @@ a {
 
 .carousel {
     margin-bottom:0px;
-    background: #009;
     color: #fff;
-    min-height:500px;
+    min-height:550px;
     h1 {
         font-size:3em;
         color:white;        
@@ -91,7 +105,7 @@ a {
 
     .carousel-inner {
         .item {
-            height:500px;
+            height:550px;
 
             .content {
                 margin-top:12em;
@@ -115,7 +129,7 @@ a {
 }
 
 .carousel-switches {
-
+    margin-bottom:1em;
     background: #306956;
     border-top:2px solid white;
 
@@ -155,13 +169,11 @@ a {
 .left-story {
     background-image: url('/assets/stories_tile.png');
     background-repeat: repeat;
-    padding-bottom: 200px;    
-
+    
 }
 
 .right-story {
     background-image: url('/assets/stories_tile.png');
     background-repeat: repeat;
-    padding-bottom: 200px;
 
 }
