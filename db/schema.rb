@@ -383,6 +383,8 @@ ActiveRecord::Schema.define(:version => 20130310020720) do
   create_table "roles_volunteers", :id => false, :force => true do |t|
     t.integer "volunteer_id"
     t.integer "role_id"
+  end
+  
   create_table "refinery_volunteer_categories", :force => true do |t|
     t.string   "name"
     t.integer  "sequence"
