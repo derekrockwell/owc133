@@ -30,12 +30,14 @@ Refinery::Menus::Menu.create(title: "why_sidebar", permatitle: "why_sidebar")
 Refinery::Menus::Menu.create(title: "what_sidebar", permatitle: "what_sidebar")
 Refinery::Menus::Menu.create(title: "when_sidebar", permatitle: "when_sidebar")
 Refinery::Menus::Menu.create(title: "volunteer_sidebar", permatitle: "volunteer_sidebar")
+
 puts "create base custom pages and their parts"
 Refinery::Page.create(title: "What", show_in_menu: true, view_template: "what")
 Refinery::Page.create(title: "Why", show_in_menu: true, view_template:"why")
 Refinery::Page.create(title: "When", show_in_menu: true, view_template: "when")
-Refinery::Page.create(title: "vol", show_in_menu: true, view_template:)
-Refinery::Page.create(title: "vol_info", show_in_menu: true, view_template:)
+Refinery::Page.create(title: "volunteer", show_in_menu: true, view_template:"volunteer")
+Refinery::Page.create(title: "volunteer_information", show_in_menu: true, view_template:"volunteer_information")
+Refinery::Page.create(title: "volunteer_thank_you", show_in_menu: true, view_template:"volunteer_thank_you") #sub of volunteer_information
 
 
 # Added by Refinery CMS Htcs extension
