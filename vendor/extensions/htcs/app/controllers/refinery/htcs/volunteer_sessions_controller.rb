@@ -15,7 +15,7 @@ module Refinery
 		    # we need to tell Devise to call the action "sessions#new"
 		    # in case something goes bad. Feel free to change it.
 		    logger.info("About to authenticate_volunteer")
-		    volunteer = authenticate_volunteer!(:recall => "refinery/htcs/volunteer_sessions#show")
+		    volunteer = authenticate_volunteer!(:recall => "refinery/htcs/volunteer_sessions#new")
 		    logger.info("Back from authenticate")
 		    flash[:notice] = "You are now signed in!"
 		    sign_in volunteer

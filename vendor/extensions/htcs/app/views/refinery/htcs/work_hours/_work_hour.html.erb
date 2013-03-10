@@ -1,0 +1,8 @@
+<tr>
+	<td><%= work_hour.volunteer_category.name %></td>
+	<td><%= work_hour.activity_date %></td>
+	<td><%= work_hour.hours %></td>
+	<td><%= work_hour.miles %></td>
+	<td><%= link_to("Delete", "/htcs/work_hours/#{work_hour.id}", :method => :delete, :confirm=>"Are you sure?") %></td>
+</tr>
+

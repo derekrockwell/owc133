@@ -142,7 +142,7 @@ ActiveRecord::Schema.define(:version => 20130310020720) do
   add_index "refinery_htcs_volunteers", ["email"], :name => "index_refinery_htcs_volunteers_on_email", :unique => true
 
   create_table "refinery_htcs_work_hours", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "volunteer_id"
     t.integer  "volunteer_category_id"
     t.date     "activity_date"
     t.float    "hours"
