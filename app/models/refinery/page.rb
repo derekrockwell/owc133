@@ -61,7 +61,7 @@ module Refinery
     before_destroy :remove_from_menus
     after_save :reposition_parts!, :expire_page_caching
     after_destroy :expire_page_caching
-    after_create :add_to_menu, :if => proc { %w(why what when).include?(parent.slug) }
+    after_create :add_to_menu, :if => proc { !!parent && %w(why what when).include?(parent.slug) }
 
     class << self
       # Live pages are 'allowed' to be shown in the frontend of your website.
