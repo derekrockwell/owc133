@@ -19,6 +19,20 @@ module Refinery
         present(@page)
       end
 
+      def create
+
+        @volunteer = Volunteer.new(params[:volunteer])
+
+        if @volunteer.save
+          @page = ::Refinery::Page.where(:slug => "thanks").first
+          redirect_to "/volunteer-information/thanks"
+        else
+          redirect_to :back, :message => "error"
+        end
+
+      end
+
+
     protected
 
       def find_all_volunteers

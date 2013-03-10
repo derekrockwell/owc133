@@ -6,7 +6,7 @@ gem "figaro", ">= 0.5.3"
 gem 'jquery-rails', '~> 2.0.0'
 gem 'anjlab-bootstrap-rails', '>= 2.2', :require => 'bootstrap-rails'
 gem "font-awesome-rails"
-
+gem "simple_form"
 group :development, :test do
 	gem 'sqlite3'
 	gem "quiet_assets", ">= 1.0.1"

@@ -244,6 +244,9 @@ GEM
       tilt (~> 1.3)
     seo_meta (1.3.0)
       railties (>= 3.0.0)
+    simple_form (2.0.4)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -294,6 +297,7 @@ DEPENDENCIES
   refinerycms-page-images (~> 2.0.0)
   refinerycms-search (~> 2.0.0)
   sass-rails (~> 3.2.3)
+  simple_form
   sqlite3
   uglifier (>= 1.0.3)
   unicorn
