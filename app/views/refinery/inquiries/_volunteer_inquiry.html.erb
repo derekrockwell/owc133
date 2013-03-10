@@ -10,7 +10,8 @@
   <%= f.association :volunteer_categories, collection: Refinery::Htcs::VolunteerCategory.all, :as => :check_boxes %>
 
   <%= f.submit 'Send' %>
-  <%= link_to 'Privacy Policy', "/pages/privacy-policy", :id => "privacy_link"  %>
+
+  <%= link_to 'Privacy Policy', "/pages/privacy-policy", :id => "privacy_link" %>
 
 
   <% end %>

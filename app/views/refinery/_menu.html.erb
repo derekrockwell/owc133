@@ -6,7 +6,7 @@
     css = [(css || 'menu clearfix')].flatten.join(' ')
     hide_children = Refinery::Core.menu_hide_children if hide_children.nil?
     -%>
-    <div id="header" class="navbar transparent navbar-inverse">
+    <div class="navbar transparent">
       <div class="navbar-inner">
         <div class="container">
           <div class="row-fluid">
@@ -15,7 +15,7 @@
               <%= link_to Refinery::Core.site_name, refinery.root_path, :class => 'brand' %>
             </div>
             <!-- links -->
-            <div class="span6 offset2">
+            <div class="span9 offset0">
 
               <div class="row-fluid">
                 <div class="span6">
@@ -27,9 +27,9 @@
                 </div>
               </div>
 
-              <div class="row-fluid pagination-centered">
-                <div class="span12">
-                  <nav id='<%= dom_id %>' class='<%= css %> nav'>
+              <div class="row-fluid">
+                <div class="span8 offset4 pagination-right">
+                  <nav id='<%= dom_id %>' class='<%= css %> nav pull-right'>
                     <div class="nav-collapse">
                       <ul class="nav">
                         <%= render :partial => '/refinery/menu_branch', :collection => roots,
