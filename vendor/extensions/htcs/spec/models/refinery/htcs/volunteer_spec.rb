@@ -52,7 +52,7 @@ module Refinery
         it "should be able to be promoted to 'active'" do
           volunteer = FactoryGirl.create(:volunteer, valid_attributes)
           expect {
-            volunteer.promote!
+            volunteer.promote!.should be_true
           }.to change(volunteer, :status).from('pending').to('active')
         end
 
@@ -61,9 +61,21 @@ module Refinery
         it "should be able to disable an 'active' volunteer" do
           volunteer = FactoryGirl.create(:volunteer, valid_attributes)
           volunteer.promote!
+          volunteer.reload
           expect {
             volunteer.disable!
           }.to change(volunteer, :status).from('active').to('disabled')
+        end
+
+        context "When the user is activated" do
+
+          it "should set its password to changeme" do
+             volunteer = FactoryGirl.create(:volunteer, valid_attributes)
+            expect {
+              volunteer.promote!
+            }.to change(volunteer, :encrypted_password)
+          end
+
         end
       end
     end

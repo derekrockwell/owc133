@@ -14,18 +14,23 @@ module Refinery
 		    # Since the authentication happens in the rack layer,
 		    # we need to tell Devise to call the action "sessions#new"
 		    # in case something goes bad. Feel free to change it.
-		    logger.info("About to authenticate_volunteer")
+		    
 		    volunteer = authenticate_volunteer!(:recall => "refinery/htcs/volunteer_sessions#new")
-		    logger.info("Back from authenticate")
-		    flash[:notice] = "You are now signed in!"
-		    sign_in volunteer
-		    redirect_to '/htcs/work_hours'
+		    
+		    if params[:volunteer][:password] == "changeme"
+		    	flash[:notice] = "Please update your password"
+		    	redirect_to '/htcs/volunteers/edit_password'
+		    else
+			    flash[:notice] = "You are now signed in!"
+			    sign_in volunteer
+			    redirect_to '/htcs/work_hours'
+			end
 		  end
 		 
 		  def destroy
 		    sign_out current_volunteer
 		    flash[:notice] = "You are now signed out!"
-		    redirect_to root_path
+		    redirect_to '/'
 		  end
 		end
 	end

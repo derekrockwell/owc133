@@ -1,5 +1,5 @@
 <% if volunteer_signed_in? %>
-  You are signed in as <%= current_volunteer.email %>. <%# =link_to "Sign out", destroy_volunteer_session_path, :method => :delete %>.
+  You are signed in as <%= current_volunteer.email %>. <%=link_to "Sign out", '/volunteers/sign_out', :method => :delete %>.
 <% else %>
   <%= form_for @volunteer, :url => '/volunteers/sign_in' do |f| %>
   <div><%= f.label :email %><br />

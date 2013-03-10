@@ -14,7 +14,7 @@ module Refinery
 
       acts_as_indexed :fields => [:first_name]
 
-      before_validation :initialize_status
+      before_validation :initialize_status, :on => :create
 
       validates_presence_of :first_name, :last_name, :zip
       validates :email, :presence => true, :uniqueness => true
@@ -77,6 +77,9 @@ module Refinery
 
 		  def promote!
 			self.update_attribute(:status, 'active') if self.status == 'pending'
+			# Also change their password to changeme
+			self.password = self.password_confirmation = "changeme"
+			self.save!
 		  end
 
 		  def disable!

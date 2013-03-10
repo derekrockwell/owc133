@@ -53,7 +53,12 @@ Refinery::Core::Engine.routes.append do
 
   # Frontend routes
   namespace :htcs do
-    resources :volunteers
+    resources :volunteers do
+      collection do
+        get :edit_password
+        put :update_password
+      end
+    end
   end
 
   # Admin routes
