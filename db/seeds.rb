@@ -37,7 +37,7 @@ Refinery::Page.create(title: "Why", show_in_menu: true, view_template:"why")
 Refinery::Page.create(title: "When", show_in_menu: true, view_template: "when")
 Refinery::Page.create(title: "volunteer", show_in_menu: true, view_template:"volunteer")
 Refinery::Page.create(title: "volunteer_information", show_in_menu: true, view_template:"volunteer_information")
-Refinery::Page.create(title: "volunteer_thank_you", show_in_menu: true, view_template:"volunteer_thank_you") #sub of volunteer_information
+Refinery::Page.create(title: "volunteer_thank_you", show_in_menu: true, view_template:"volunteer_thank_you") #sub of volunteer_information /thanks
 
 
 # Added by Refinery CMS Htcs extension
