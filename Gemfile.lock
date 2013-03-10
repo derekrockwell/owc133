@@ -6,6 +6,13 @@ GIT
       awesome_nested_set (~> 2.1.0)
       refinerycms-core (~> 2.0.9)
 
+GIT
+  remote: https://github.com/sbeam/refinerycms-calendar.git
+  revision: 42af307f7f41b5fca2a1bea542ef0bd436f0cff9
+  specs:
+    refinerycms-calendar (2.0.2)
+      refinerycms-core (~> 2.0)
+
 PATH
   remote: vendor/extensions
   specs:
@@ -273,6 +280,7 @@ DEPENDENCIES
   rails (~> 3.2.12)
   refinerycms (~> 2.0.0)
   refinerycms-blog (~> 2.0.0)
+  refinerycms-calendar (~> 2.0.0)!
   refinerycms-htcs!
   refinerycms-i18n (~> 2.0.0)
   refinerycms-menus!
