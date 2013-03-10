@@ -5,16 +5,50 @@
     dom_id ||= 'menu'
     css = [(css || 'menu clearfix')].flatten.join(' ')
     hide_children = Refinery::Core.menu_hide_children if hide_children.nil?
--%>
-<nav id='<%= dom_id %>' class='<%= css %>'>
-  <ul>
-    <%= render :partial => '/refinery/menu_branch', :collection => roots,
-               :locals => {
-                 :hide_children => hide_children,
-                 :sibling_count => (roots.length - 1),
-                 :menu_levels => local_assigns[:menu_levels],
-                 :apply_css => true #if you don't care about class='first' class='last' or class='selected' set apply_css to false for speed.
-               } -%>
-  </ul>
-</nav>
-<% end -%>
+    -%>
+    <div class="navbar transparent">
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="row-fluid">
+            <!-- logo -->
+            <div class="span3">
+              <%= link_to Refinery::Core.site_name, refinery.root_path, :class => 'brand' %>
+            </div>
+            <!-- links -->
+            <div class="span9 offset0">
+
+              <div class="row-fluid">
+                <div class="span6">
+                  <h3>#1&#8209;612&#8209;281&#8209;5496</h3>
+                </div>
+                <div class="span2 offset4 pagination-left">
+                  <%= render 'refinery/navbar_button' unless @page.slug == 'home' %>
+                  <h3>Volunteer</h3>
+                </div>
+              </div>
+
+              <div class="row-fluid">
+                <div class="span8 offset4 pagination-right">
+                  <nav id='<%= dom_id %>' class='<%= css %> nav pull-right'>
+                    <div class="nav-collapse">
+                      <ul class="nav">
+                        <%= render :partial => '/refinery/menu_branch', :collection => roots,
+                        :locals => {
+                         :hide_children => hide_children,
+                         :sibling_count => (roots.length - 1),
+                         :menu_levels => local_assigns[:menu_levels],
+                       :apply_css => true #if you don't care about class='first' class='last' or class='selected' set apply_css to false for speed.
+                     }  -%>
+                   </ul>
+                 </div>
+               </nav>
+             </div>
+
+           </div>
+         </div>
+
+       </div>
+     </div>
+   </div>
+ </div>
+ <% end -%>

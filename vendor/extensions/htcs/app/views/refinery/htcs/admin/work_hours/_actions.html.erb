@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Htcs::Admin::WorkHoursController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.htcs_admin_work_hours_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_htcs_admin_work_hour_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Htcs::Admin::WorkHoursController.sortable? && ::Refinery::Htcs::WorkHour.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Work Hours"),
+                 refinery.htcs_admin_work_hours_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Work Hours"),
+                 refinery.htcs_admin_work_hours_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

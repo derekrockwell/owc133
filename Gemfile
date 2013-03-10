@@ -5,12 +5,11 @@ gem 'rails', '~> 3.2.12'
 gem "figaro", ">= 0.5.3"
 gem 'jquery-rails', '~> 2.0.0'
 gem 'anjlab-bootstrap-rails', '>= 2.2', :require => 'bootstrap-rails'
-
+gem "font-awesome-rails"
+gem "simple_form"
 group :development, :test do
 	gem 'sqlite3'
 	gem "quiet_assets", ">= 1.0.1"
-	gem 'rspec-rails'
-	gem 'refinerycms-testing', '~> 2.0.3'
 end
 
 group :staging, :production do
@@ -36,12 +35,10 @@ gem 'refinerycms', '~> 2.0.0'
 # Specify additional Refinery CMS Extensions here (all optional):
 gem 'refinerycms-i18n', '~> 2.0.0'
 gem 'refinerycms-blog', '~> 2.0.0'
-gem 'refinerycms-inquiries', '~> 2.0.0'
 gem 'refinerycms-search', '~> 2.0.0'
 gem 'refinerycms-page-images', '~> 2.0.0'
 gem 'refinerycms-menus', git: 'https://github.com/pylonweb/refinerycms-menus.git'
 gem 'refinerycms-calendar', '~>2.0.0', :git => 'https://github.com/sbeam/refinerycms-calendar.git'
-gem "refinerycms-news", '~> 2.0.0'
 # The Heroku gem allows you to interface with Heroku's API
 gem 'heroku'
 

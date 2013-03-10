@@ -1,0 +1,17 @@
+  <% @volunteer = Refinery::Htcs::Volunteer.new unless @volunteer%>
+
+
+  <%= simple_form_for [refinery, :htcs, @volunteer] do |f| %>
+
+  <%= f.input :first_name, placeholder: 'First Name' %>
+  <%= f.input :last_name, placeholder: 'Last Name' %>
+  <%= f.input :email, placeholder:'Email' %>
+  <%= f.input :zip, placeholder: 'Zipcode' %>
+  <%= f.association :volunteer_categories, collection: Refinery::Htcs::VolunteerCategory.all, :as => :check_boxes %>
+
+  <%= f.submit 'Send' %>
+
+  <%= link_to 'Privacy Policy', "/pages/privacy-policy", :id => "privacy_link" %>
+
+
+  <% end %>

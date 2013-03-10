@@ -1,12 +1,46 @@
 nb:
   refinery:
     plugins:
+      volunteers:
+        title: Volunteers
+      work_hours:
+        title: Work Hours
       volunteer_categories:
         title: Volunteer Categories
       htcs:
         title: Htcs
-    volunteer_categories:
+    htcs:
       admin:
+        volunteers:
+          actions:
+            create_new: Lag en ny Volunteer
+            reorder: Endre rekkefølgen på Volunteers
+            reorder_done: Ferdig å endre rekkefølgen Volunteers
+          records:
+            title: Volunteers
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Volunteers enda. Klikk på "Lag en ny Volunteer"
+              for å legge til din første volunteer.
+          volunteer:
+            view_live_html: Vis hvordan denne volunteer ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne volunteer
+            delete: Fjern denne volunteer permanent
+        work_hours:
+          actions:
+            create_new: Lag en ny Work Hour
+            reorder: Endre rekkefølgen på Work Hours
+            reorder_done: Ferdig å endre rekkefølgen Work Hours
+          records:
+            title: Work Hours
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Work Hours enda. Klikk på "Lag en ny Work Hour"
+              for å legge til din første work hour.
+          work_hour:
+            view_live_html: Vis hvordan denne work hour ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne work hour
+            delete: Fjern denne work hour permanent
         volunteer_categories:
           actions:
             create_new: Lag en ny Volunteer Category
@@ -22,11 +56,6 @@ nb:
               <br/><em>(åpner i et nytt vindu)</em>
             edit: Rediger denne volunteer category
             delete: Fjern denne volunteer category permanent
-      volunteer_categories:
-        show:
-          other: Andre Volunteer Categories
-    htcs:
-      admin:
         htcs:
           actions:
             create_new: Lag en ny Htc
@@ -42,12 +71,29 @@ nb:
               i et nytt vindu)</em>
             edit: Rediger denne htc
             delete: Fjern denne htc permanent
+      volunteers:
+        show:
+          other: Andre Volunteers
+      work_hours:
+        show:
+          other: Andre Work Hours
+      volunteer_categories:
+        show:
+          other: Andre Volunteer Categories
       htcs:
         show:
           other: Andre Htcs
   activerecord:
     attributes:
-      refinery/volunteer_categories/volunteer_category:
+      refinery/htcs/volunteer:
+        first_name: First Name
+      refinery/htcs/work_hour:
+        user_id: User
+        volunteer_category_id: Volunteer Category
+        activity_date: Activity Date
+        hours: Hours
+        miles: Miles
+      refinery/htcs/volunteer_category:
         name: Name
         sequence: Sequence
       refinery/htcs/htc:

@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="work_hours">
+    <% @work_hours.each do |work_hour| %>
+      <li>
+        <%= link_to work_hour, refinery.htcs_work_hour_path(work_hour) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

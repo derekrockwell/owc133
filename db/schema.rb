@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130309165642) do
+ActiveRecord::Schema.define(:version => 20130310020720) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -95,6 +95,61 @@ ActiveRecord::Schema.define(:version => 20130309165642) do
     t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "refinery_htcs_roles", :force => true do |t|
+    t.string "title"
+  end
+
+  create_table "refinery_htcs_volunteer_categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "sequence"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "refinery_htcs_volunteer_interests", :force => true do |t|
+    t.integer "volunteer_id"
+    t.integer "volunteer_category_id"
+  end
+
+  create_table "refinery_htcs_volunteer_plugins", :force => true do |t|
+    t.integer "volunteer_id"
+    t.string  "name"
+    t.integer "position"
+  end
+
+  create_table "refinery_htcs_volunteers", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone_number"
+    t.string   "email"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "status"
+    t.integer  "position"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+  end
+
+  add_index "refinery_htcs_volunteers", ["email"], :name => "index_refinery_htcs_volunteers_on_email", :unique => true
+
+  create_table "refinery_htcs_work_hours", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "volunteer_category_id"
+    t.date     "activity_date"
+    t.float    "hours"
+    t.float    "miles"
+    t.integer  "position"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   create_table "refinery_image_page_translations", :force => true do |t|
@@ -325,6 +380,11 @@ ActiveRecord::Schema.define(:version => 20130309165642) do
 
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
 
+  create_table "roles_volunteers", :id => false, :force => true do |t|
+    t.integer "volunteer_id"
+    t.integer "role_id"
+  end
+  
   create_table "refinery_volunteer_categories", :force => true do |t|
     t.string   "name"
     t.integer  "sequence"

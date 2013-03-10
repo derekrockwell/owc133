@@ -1,0 +1,51 @@
+<% content_for :body_content_title do %>
+  <%= @work_hour.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>User</h1>
+    <p>
+      <%=raw @work_hour.volunteer.full_name %>
+    </p>
+  </section>
+  <section>
+    <h1>Volunteer Category</h1>
+    <p>
+      <%=raw @work_hour.volunteer_category_id %>
+    </p>
+  </section>
+  <section>
+    <h1>Activity Date</h1>
+    <p>
+      <%=raw @work_hour.activity_date %>
+    </p>
+  </section>
+  <section>
+    <h1>Hours</h1>
+    <p>
+      <%=raw @work_hour.hours %>
+    </p>
+  </section>
+  <section>
+    <h1>Miles</h1>
+    <p>
+      <%=raw @work_hour.miles %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="work_hours">
+      <% @work_hours.each do |work_hour| %>
+        <li>
+          <%= link_to work_hour.title, refinery.htcs_work_hour_path(work_hour) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

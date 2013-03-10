@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="volunteers">
+    <% @volunteers.each do |volunteer| %>
+      <li>
+        <%= link_to volunteer.first_name, refinery.htcs_volunteer_path(volunteer) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

@@ -1,0 +1,41 @@
+<%= form_for [refinery, :htcs_admin, @work_hour] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @work_hour,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :user_id -%>
+    <%= f.number_field :user_id  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :volunteer_category_id -%>
+    <%= f.number_field :volunteer_category_id  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :activity_date -%>
+    <%= f.date_select :activity_date  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :hours -%>
+    <%= f.text_field :hours  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :miles -%>
+    <%= f.text_field :miles  -%>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.work_hours.admin.work_hours.work_hour'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete') %>
+<% end -%>
