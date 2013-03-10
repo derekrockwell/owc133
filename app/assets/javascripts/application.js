@@ -15,4 +15,4 @@
 //= require twitter/bootstrap
 
 
-$('.carousel').carousel()
+$('.carousel').carousel({interval:10000})

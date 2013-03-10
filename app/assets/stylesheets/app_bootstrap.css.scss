@@ -5,9 +5,8 @@ $gridColumnWidth: 70px;
 $gridGutterWidth768: 0px;
 $gridGutterWidth1200: 0px;
 $gridGutterWidth: 0px;
-$footer1_height: 10em;
 $footer1_padding: 1em;
-$footer2_height: 2em;
+$footer2_height: 1em;
 $footer2_padding: 1em;
 $outsidePadding: 2em;
 @import "twitter/bootstrap";
@@ -16,6 +15,7 @@ $outsidePadding: 2em;
 h1,h2,h3,h4,h5,h6 {
     text-transform: uppercase;
     font-family: 'Roboto Condensed', 'Segoe UI', 'Helvetica','Arial',sans-serif;
+    color: $headerGreen;
 }
 
 html, body {
@@ -24,23 +24,50 @@ html, body {
 
 }
 
-#page {
-    padding-bottom:200px;
+.sidebar {
+    padding:2em;
 }
 
+.content {
+    padding:2em;
+}
+
+
+a {
+    text-decoration: underline;
+}
+
+#page {
+    padding-bottom:175px;
+}
+
+.flower-header {
+    height:250px;
+    width:100%;
+    background: url("/assets/Flowers_Header.jpg") center center;
+    overflow:hidden;
+}
 
 #footer {
 	background:#deebe1;
 	color:#00382f;
-    height: $footer1_height;
-    padding: $footer1_padding $outsidePadding ($footer2_height + 2 * $footer2_padding) $outsidePadding;
+    padding: $footer1_padding $outsidePadding ($footer1_padding + $footer2_height + 2 * $footer2_padding) $outsidePadding;
 }
 
 #footer2 {
     background:#231e24;
-    color: #fff;
+    color: gray;
     padding: $footer2_padding;
     height: $footer2_height;
+
+    a {
+        padding: 0 2em;
+        color: gray;
+
+        &:hover {
+            color: white;
+        }
+    }
 }
 #header {
     position:absolute;
@@ -65,11 +92,11 @@ html, body {
 
 .carousel {
     margin-bottom:0px;
-    background: #009;
     color: #fff;
-    min-height:500px;
+    min-height:550px;
     h1 {
-        font-size:3em;        
+        font-size:3em;
+        color:white;        
     }
 
     p {
@@ -78,7 +105,7 @@ html, body {
 
     .carousel-inner {
         .item {
-            height:500px;
+            height:550px;
 
             .content {
                 margin-top:12em;
@@ -102,7 +129,7 @@ html, body {
 }
 
 .carousel-switches {
-
+    margin-bottom:1em;
     background: #306956;
     border-top:2px solid white;
 
@@ -110,7 +137,7 @@ html, body {
 
         padding:1em;
         border-width:1px;
-        border-color:gray;
+        border-color:white;
         border-style: none solid ;
         margin:0 !important;
         color:#fff;
@@ -118,6 +145,10 @@ html, body {
 
         h2 {
             color:white;
+        }
+
+        &:hover {
+            background:#458272;
         }
 
     }
@@ -138,13 +169,11 @@ html, body {
 .left-story {
     background-image: url('/assets/stories_tile.png');
     background-repeat: repeat;
-    padding-bottom: 200px;    
-
+    
 }
 
 .right-story {
     background-image: url('/assets/stories_tile.png');
     background-repeat: repeat;
-    padding-bottom: 200px;
 
 }
