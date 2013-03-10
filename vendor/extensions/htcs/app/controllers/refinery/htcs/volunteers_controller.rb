@@ -27,9 +27,15 @@ module Refinery
           @page = ::Refinery::Page.where(:slug => "thanks").first
           redirect_to "/volunteer-information/thanks"
         else
-          redirect_to :back, :message => "error"
+          @page = ::Refinery::Page.where(:slug => 'volunteer-information').first
+          render :new
         end
 
+      end
+
+      def new
+        @page = ::Refinery::Page.where(:slug => 'volunteer-information').first
+        @volunteer = Volunteer.new
       end
 
 

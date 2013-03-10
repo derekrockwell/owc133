@@ -1,35 +1,16 @@
-  <% @volunteer = Refinery::Htcs::Volunteer.new %>
+  <% @volunteer = Refinery::Htcs::Volunteer.new unless @volunteer%>
 
-  <div class='inquiries'>
-    <%= simple_form_for [refinery, :htcs, @volunteer] do |f| %>
-    <%= render :partial => "/refinery/admin/error_messages",
-    :locals => {
-     :object => @volunteer,
-     :include_object_name => true
-   } %>
-   <div class="field">
-    <%= f.required_label :first_name, :class => 'placeholder-fallback' %>
-    <%= f.text_field :first_name, :class => 'text', :required => 'required', :placeholder => 'First Name' %>
-  </div>
-  <div class="field">
-    <%= f.required_label :last_name, :class => 'placeholder-fallback' %>
-    <%= f.text_field :last_name, :class => 'text', :required => 'required', :placeholder => 'Last Name' %>
-  </div>      
-  <div class="field">
-    <%= f.required_label :email, :class => 'placeholder-fallback' %>
-    <%= f.email_field :email, :class => 'text email', :required => 'required', :placeholder => 'Email' %>
-  </div>
-  <div class="field">
-    <%= f.required_label :zip, :class => 'placeholder-fallback' %>
-    <%= f.email_field :zip, :class => 'text', :required => 'required', :placeholder => 'Zipcode' %>
-  </div>
-  <div class="field">
-    <%= f.association :volunteer_categories, collection: Refinery::Htcs::VolunteerCategory.all, :as => :check_boxes %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Send' %>
-    <%= link_to 'Privacy Policy', "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link %>
-  </div>
+
+  <%= simple_form_for [refinery, :htcs, @volunteer] do |f| %>
+
+  <%= f.input :first_name, placeholder: 'First Name' %>
+  <%= f.input :last_name, placeholder: 'Last Name' %>
+  <%= f.input :email, placeholder:'Email' %>
+  <%= f.input :zip, placeholder: 'Zipcode' %>
+  <%= f.association :volunteer_categories, collection: Refinery::Htcs::VolunteerCategory.all, :as => :check_boxes %>
+
+  <%= f.submit 'Send' %>
+  <%= link_to 'Privacy Policy', "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link %>
+
 
   <% end %>
-</div>
