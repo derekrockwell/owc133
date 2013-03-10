@@ -24,6 +24,10 @@ html, body {
 
 }
 
+i {
+    color:$headerGreen;
+}
+
 .sidebar {
     padding:2em;
 }
@@ -39,6 +43,10 @@ a {
 
 #page {
     padding-bottom:175px;
+}
+
+.social-link {
+    text-decoration: none;
 }
 
 .flower-header {
