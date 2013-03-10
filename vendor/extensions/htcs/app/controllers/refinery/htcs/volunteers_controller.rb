@@ -46,6 +46,22 @@ module Refinery
         @volunteer = Volunteer.new
       end
 
+      def edit_password
+
+      end
+
+      def update_password
+        current_volunteer.password = params[:volunteer][:password]
+        current_volunteer.password_confirmation = params[:volunteer][:password_confirmation]
+
+        if current_volunteer.save
+          flash[:notice] = "Password updated"
+          redirect_to '/htcs/work_hours'
+        else
+          render :action => 'edit_password'
+        end
+      end
+
 
     protected
 
