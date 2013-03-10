@@ -6,13 +6,13 @@
     css = [(css || 'menu clearfix')].flatten.join(' ')
     hide_children = Refinery::Core.menu_hide_children if hide_children.nil?
     -%>
-    <div class="navbar transparent">
+    <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
           <div class="row-fluid">
             <!-- logo -->
             <div class="span3">
-              <%= link_to Refinery::Core.site_name, refinery.root_path, :class => 'brand' %>
+              <%= image_tag "Header_Logo.png" %>
             </div>
             <!-- links -->
             <div class="span9 offset0">
