@@ -23,9 +23,17 @@ module Refinery
 
         @volunteer = Volunteer.new(params[:volunteer])
 
+        # Since this is a pending user, they get a random password.
+        # Use this to get a nice 40 character random string
+        @volunteer.password = @volunteer.password_confirmation = Digest::SHA1.hexdigest([Time.now, rand].join)
+
         if @volunteer.save
           @page = ::Refinery::Page.where(:slug => "thanks").first
+          flash[:notice] = "Registration Successful"
+
+          # Now, this is a PENDING Volunteer!  They don't even know their password.
           redirect_to "/volunteer-information/thank-you"
+          
         else
           @page = ::Refinery::Page.where(:slug => 'volunteer-information').first
           render :new
