@@ -5,9 +5,9 @@ $gridColumnWidth: 70px;
 $gridGutterWidth768: 0px;
 $gridGutterWidth1200: 0px;
 $gridGutterWidth: 0px;
-$footer1_padding: 1em;
-$footer2_height: 1em;
-$footer2_padding: 1em;
+$footer1_padding: .5em;
+$footer2_height: .5em;
+$footer2_padding: 0em;
 $outsidePadding: 2em;
 @import "twitter/bootstrap";
 @import "twitter/bootstrap-responsive";
@@ -36,6 +36,11 @@ i {
     padding:2em;
 }
 
+.slider-bg {
+    width:100%;
+    height:500px;
+    background: url("/assets/slide2.jpg") center center;
+}
 
 a {
     text-decoration: underline;
@@ -62,21 +67,7 @@ a {
     padding: $footer1_padding $outsidePadding ($footer1_padding + $footer2_height + 2 * $footer2_padding) $outsidePadding;
 }
 
-#footer2 {
-    background:#231e24;
-    color: gray;
-    padding: $footer2_padding;
-    height: $footer2_height;
 
-    a {
-        padding: 0 2em;
-        color: gray;
-
-        &:hover {
-            color: white;
-        }
-    }
-}
 #header {
     position:absolute;
     width:100%;
@@ -121,19 +112,41 @@ a {
 
         }
         .slide1 {
-            background-image: url('/assets/Slider_1.jpg');
-            background-size: 100%;
+            background-image: url('/assets/slide2.jpg');
+            background-size:auto;
         }
         .slide2 {
-            background-image: url('/assets/Slider_2_2000.jpg');
+            background-image: url('/assets/slide2.jpg');
             background-size: 100%;
         }
         .slide3 {
-            background-image: url('/assets/Slider_3_2000.jpg');
-            background-size: 100%;
+            background-image: url('/assets/slide2.jpg');
+            background-size: cover;
         }
     }
 
+
+
+}
+
+
+
+.carousel-text {
+
+    color:#fff ;
+    position:relative;
+    top:-26.5em;
+    left:3em;
+
+    h1 {
+        color: #fff;
+        font-size:50pt;
+        font-weight: bold italic;
+    }
+
+    p {
+        font-size:16pt;
+    }
 }
 
 .carousel-switches {

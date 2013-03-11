@@ -13,6 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require_tree
 
 
 $('.carousel').carousel({interval:10000})
+
+ $(window).load(function() {
+    $('.flexslider').flexslider({
+
+        controlNav: false
+    });
+  });
