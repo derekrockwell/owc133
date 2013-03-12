@@ -1,45 +1,54 @@
 <!-- Place somewhere in the <body> of your page -->
 <div class="flex-container">
   <div class="flexslider">
-  <ul class="slides">
-    <li class="slider-bg">
-       <%= image_tag "slide2.jpg" %>
-       <div class="carousel-text">
-        <h1>Super important HOTC text</h1>
-        <p>
-          Rabble rabble rabble lorem ipsum hospice twin cities helping people yadda yadda yadda
-        </p>
-      </div>     
-    </li>
-    <li class= "slider-bg">
-      <%= image_tag "slide2.jpg" %>
-      <div class="carousel-text">
-        <h1>Super important HOTC text</h1>
-        <p>
-          Rabble rabble rabble lorem ipsum hospice twin cities helping people yadda yadda yadda
-        </p>
+    <ul class="slides">
+      <li class="slider-bg">
+       <%= image_tag "slide1.jpg" %>
+       <div class="container-fluid carousel-text">
+        <div class="row-fluid">
+          <div class="span9">
+            <%= raw @page.content_for(:slide1) %>
+            <div class="row-fluid">
+              <div class="span4 offset7">
+                <%= link_to "Learn More","/test", :class => "btn btn-primary btn-large btn-block" %>
+              </div>            
+            </div>
+          </div>
+        </div>    
+      </li>
+      <li class= "slider-bg">
+        <%= image_tag "slide2.jpg" %>
+        <div class="container-fluid carousel-text">
+          <div class="row-fluid">
+            <div class="span9">
+              <%= raw @page.content_for(:slide2) %>
+              <div class="row-fluid">
+               <div class="span4 offset7">
+                <%= link_to "Learn More","/test", :class => "btn btn-primary btn-large btn-block" %>
+              </div>       
+            </div>
+          </div>
+        </div>
       </div>
     </li>
     <li class= "slider-bg">
-      <%= image_tag "slide2.jpg" %>
-      <div class="carousel-text">
-        <h1>Super important HOTC text</h1>
-        <p>
-          Rabble rabble rabble lorem ipsum hospice twin cities helping people yadda yadda yadda
-        </p>
+      <%= image_tag "slide3.jpg" %>
+      <div class="container-fluid carousel-text">
+        <div class="row-fluid">
+          <div class="span9">
+            <%= raw @page.content_for(:slide3) %>
+            <div class="row-fluid">
+             <div class="span4 offset7">
+              <%= link_to "Learn More","/test", :class => "btn btn-primary btn-large btn-block" %>
+            </div>       
+          </div>         
+        </div>
       </div>
-    </li>
-  </ul>
+    </div>
+  </li>
+</ul>
 </div>
 </div>
-
-
-<!-- <ol class="carousel-indicators">
-  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-  <li data-target="#myCarousel" data-slide-to="1"></li>
-  <li data-target="#myCarousel" data-slide-to="2"></li>
-</ol> -->
-<!-- what -->
 
 <div class="carousel-switches">
   <div class="container-fluid">
