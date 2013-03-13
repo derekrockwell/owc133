@@ -27,17 +27,18 @@ p {
   font-size:11pt;
 }
 
+.navbar .btn, .navbar .btn-group {
+  margin-top: 0px;
+}
+
 html, body {
   margin: auto auto;
   width: 100%;
   margin: 0px;
   padding: 0px;
-  overflow: hidden;
+  overflow-x: hidden;
   font-family: 'Open Sans','Segoe UI','Helvetica','Arial', sans-serif;
 }
-
-
-
 
 #page_container {
   width:100%;
@@ -158,6 +159,7 @@ i {
 .carousel-switches {
   background: #306956;
   border-top:2px solid white;
+  height:100px;
 
   .carousel-switch {
 
@@ -168,35 +170,59 @@ i {
     margin:0 !important;
     color:#fff;
     cursor:pointer;
-
+    height:100px;
     h2 {
       color:white;
     }
 
-    &:hover {
+    &:hover, &.flex-active {
       background:#458272;
     }
+
 
   }
 }
 
 @media (min-width:1801px) {
 
+  h1 {
+    font-size:20pt;
+  }
+
+  p {
+    font-size:12pt;
+  }
+
+  .flex-container {
+    .carousel-text {
+      top:30px;
+      left:50px;
+      width:55%;
+    }
+  }
+
   #page_container {
-    width:65%;   
+    width:75%;   
   }
 }
 
 @media (max-width:1800px) and (min-width:1501px) {
 
-  #page_container {
-    width:75%;  
+  h1 {
+    font-size:20pt;
   }
 
-}
+  p {
+    font-size:12pt;
+  }
 
-/* Large desktop */
-@media (min-width: 1200px) and (max-width: 1500px) {
+  .flex-container {
+    .carousel-text {
+      top:30px;
+      left:50px;
+      width:55%;
+    }
+  }
 
   #page_container {
     width:85%;  
@@ -204,14 +230,43 @@ i {
 
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+/* Large desktop */
+@media (min-width: 1200px) and (max-width: 1500px) {
+
   h1 {
-    font-size:20px;
-    line-height:30px;
+    font-size:20pt;
   }
 
   p {
-    font-size:10px;
+    font-size:12pt;
+  }
+
+  .flex-container {
+    .carousel-text {
+      top:30px;
+      left:50px;
+      width:70%;
+    }
+  }
+
+  #page_container {
+    width:90%;  
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  h1 {
+    font-size:20px;
+    line-height:20px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size:14px;
   }
 
   #page {
@@ -221,13 +276,13 @@ i {
   .flex-container {
 
     .carousel-text {
-      top:20px;
-      left:30px;
+      top:10px;
+      left:20px;
       width:80%;
-      line-height:25px;
+      line-height:15px;
 
       .btn {
-        padding:10px;
+        padding:5px;
       }
     }
   }
@@ -258,7 +313,9 @@ i {
 
     .volunteer-button {
       position:relative;
-      width:92%;
+      width:94%;
+      padding-top:20px;
+      padding-bottom:20px;
     }
 
     .header-button {
@@ -266,12 +323,11 @@ i {
       position:relative;
       bottom:0px;
       right:0px;
+      padding-top:20px;
+      padding-bottom:20px;      
     }
-
-  }  
-
-}
-
+  } 
+}   
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) { 
@@ -280,7 +336,7 @@ i {
   }
 
   h1 {
-    font-size:10pt;  
+    font-size:12pt;  
   }
 
   h2 {
@@ -288,7 +344,7 @@ i {
   }
 
   p {
-    font-size:10pt;
+    font-size:12pt;
   }
 
   #header {
@@ -301,11 +357,12 @@ i {
     }
 
     .phone {
-      top:0px;
+      top:10px;
       left:60%;
       width:100%;
       h4 {
-        font-size:10pt;
+        font-size:14pt;
+        line-height: 10px;
       }
     }
 
@@ -317,15 +374,21 @@ i {
     }
 
     .volunteer-button {
-      width:95%;
+      font-size:20pt;
+      width:96%;
       position:relative;
+      padding-top:15px;
+      padding-bottom:15px;
     }
 
     .header-button {
+      font-size:20pt;
       width:98%;
       position:relative;
       bottom:0px;
       right:0px;
+      padding-top:15px;
+      padding-bottom:15px;      
     }
 
   } 
@@ -339,7 +402,23 @@ i {
     .carousel-text {
       display:none;
     }
-  }      
+
+  }
+  .carousel-switches {
+    height:auto;
+
+    h1 {
+      color:white;
+    }
+
+    .carousel-switch {
+      height:auto;
+      border: 0px;
+      border-bottom:2px solid;
+    }
+
+  }   
+
 
 }
 

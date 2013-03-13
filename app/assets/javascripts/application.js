@@ -16,11 +16,10 @@
 //= require_tree
 
 
-$('.carousel').carousel({interval:10000})
-
- $(window).load(function() {
+$(window).load(function() {
     $('.flexslider').flexslider({
-
-        controlNav: false
+        controlsContainer: ".switches-container",
+        controlNav: true,
+        manualControls: "#switches .carousel-switch"
     });
-  });
+});

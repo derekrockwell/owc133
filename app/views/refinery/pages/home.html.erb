@@ -51,51 +51,57 @@
 </div>
 
 <div class="carousel-switches">
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <!-- why -->
-      <div data-target="#myCarousel" data-slide-to="0"  class="span4 carousel-switch active">
-       <%= raw @page.content_for(:what) %>
-     </div>
-     <!-- how -->
-     <div data-target="#myCarousel" data-slide-to="1" class="span4 carousel-switch ">
-       <%= raw @page.content_for(:why) %>
-     </div>
-
-     <!-- caregiver -->
-     <div data-target="#myCarousel" data-slide-to="2"class="span4 carousel-switch">
-       <%= raw @page.content_for(:when) %>
-     </div>
-
-   </div>
- </div>
-</div>
-
-<div class="container-fluid story-wrapper">
-  <div class="row-fluid ">
-    <div class="span6">
-      <div class="row-fluid left-story">
-        <div class="span6 story-image">
-          <%= image_tag @page.images[0].url, :class => "img-circle" %>
-        </div>
-
-        <div class="span6 story">
-          <%= raw @page.content_for(:left_story) %>
-        </div>
+  <div class="switches-container container-fluid">
+    <div id="switches" class="row-fluid visible-tablet visible-desktop">
+      <div class="span4 carousel-switch">
+        <%= raw @page.content_for(:what) %>
+      </div>
+      <div class="span4 carousel-switch">
+        <%= raw @page.content_for(:why) %>
+      </div>
+      <div class="span4 carousel-switch">
+        <%= raw @page.content_for(:when) %>
       </div>
     </div>
-    <div class="span6 ">
-      <div class="row-fluid right-story">      
-
-        <div class="span6 story">
-          <%= raw @page.content_for(:right_story) %>
-        </div>
-        <div class="span6 story-image">
-          <%= image_tag @page.images[1].url, :class => "img-circle" %>
-        </div>
+    <div class="row-fluid visible-phone" %>
+      <div class="span4 carousel-switch">
+        <%= raw @page.content_for(:slide1) %>
+      </div>
+      <div class="span4 carousel-switch">
+        <%= raw @page.content_for(:slide2) %>
+      </div> 
+      <div class="span4 carousel-switch">
+        <%= raw @page.content_for(:slide3) %>
       </div>
     </div>
   </div>
 </div>
+
+  <div class="container-fluid story-wrapper">
+    <div class="row-fluid ">
+      <div class="span6">
+        <div class="row-fluid left-story">
+          <div class="span6 story-image">
+            <%= image_tag @page.images[0].url, :class => "img-circle" %>
+          </div>
+
+          <div class="span6 story">
+            <%= raw @page.content_for(:left_story) %>
+          </div>
+        </div>
+      </div>
+      <div class="span6 ">
+        <div class="row-fluid right-story">      
+
+          <div class="span6 story">
+            <%= raw @page.content_for(:right_story) %>
+          </div>
+          <div class="span6 story-image">
+            <%= image_tag @page.images[1].url, :class => "img-circle" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
