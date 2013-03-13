@@ -28,18 +28,25 @@ p {
 }
 
 html, body {
+  margin: auto auto;
+  width:100%;
   height:100%;
   font-family: 'Open Sans','Segoe UI','Helvetica','Arial', sans-serif;
 }
 
-.logo {
-  position:absolute;
-  top:10px;
+
+
+#page_container {
+  width:100%;
+  margin:auto auto;    
 }
 
 #page {
+  width:100%;
   padding-bottom:150px;
-  overflow:auto;
+  background-image: url('/assets/stories_tile.png');
+  background-repeat: repeat;
+
 }
 
 i {
@@ -48,10 +55,9 @@ i {
 
 .flex-container {
 
-  padding-top:90px;
-
   .flexslider {
     margin:0;
+    border:none;
   }
 
   .carousel-text {
@@ -87,42 +93,58 @@ i {
 }
 
 #footer {
-	background:#deebe1;
-	color:#00382f;
+  width:inherit;
+  background:#deebe1;
+  color:#00382f;
   height:150px;
+  margin: auto auto;
 }
 
 
 #header {
-  position:absolute;
-  width:100%;
+  position:relative;
   z-index: 2;
   color:#000;
+  h3 {
+    color:$headerGreen;
+  }
 
   .navbar {
     margin-bottom:0;
 
-    .navbar-inner {
-      background: rgba(255,255,255,.9);
-    }
-
+  }
+  .navbar-inner {
+    padding-top:40px;
+    background: rgba(255,255,255,.9);
   }
 
-  h3 {
-    color:$headerGreen;
+  .phone {
+    position:absolute;
+    top:20px;
+    left:30%
   }
+
+  .volunteer-button {
+    position:absolute;
+    top:0px;
+    right:0px;
+  }
+
+  .logo {
+    width:100%;
+    position:absolute;
+    top:20px;
+  }  
 
 }
 
 .story {
   margin:0px !important;
-  padding:2em;
-
+  padding:1em;
 }
 
 .story-image {
-
-  padding: 2em;
+  padding: 1em;
 }
 
 .story-wrapper {
@@ -131,7 +153,6 @@ i {
 }
 
 .carousel-switches {
-  margin-bottom:1em;
   background: #306956;
   border-top:2px solid white;
 
@@ -156,29 +177,28 @@ i {
   }
 }
 
+@media (min-width:1801px) {
+
+  #page_container {
+    width:65%;   
+  }
+}
+
+@media (max-width:1800px) and (min-width:1501px) {
+
+  #page_container {
+    width:75%;  
+  }
+
+}
+
 /* Large desktop */
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1500px) {
 
-  h1 {
-    font-size:36px;
-    line-height:40px;
+  #page_container {
+    width:85%;  
   }
 
-  p {
-    font-size:14px;
-  }
-
-  .flex-container {
-
-    padding-top:70px;
-
-    .carousel-text {
-      top:30px;
-      left:30px;
-      width:75%;
-      line-height:25px;
-    }
-  }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
@@ -191,25 +211,11 @@ i {
     font-size:10px;
   }
 
-  .phone {
-    h1 {
-      font-size:16px;
-    }
-    position:absolute;
-    top:0;
-    right:50px;
-
-  }
-
-  .logo {
-    img {
-      width:60%;
-    }
+  #page {
+    padding-bottom:50px;
   }
 
   .flex-container {
-
-    padding-top:90px;
 
     .carousel-text {
       top:20px;
@@ -223,9 +229,45 @@ i {
     }
   }
 
-}
+  #header {
 
-/* default non media query is between 940-1210 */
+    .logo {
+      position:absolute;
+      top:0px;
+      left:30px;
+      width:175px;
+    }
+
+    .phone {
+      top:0px;
+      left: 70%;
+      h4 {
+        font-size:12pt;
+      }
+    }
+
+    .navbar-inner {
+      padding-left:0px;
+      padding-right:0px;
+      padding-top:80px;
+      min-height:30px;
+    }
+
+    .volunteer-button {
+      position:relative;
+      width:92%;
+    }
+
+    .header-button {
+      width:96%;
+      position:relative;
+      bottom:0px;
+      right:0px;
+    }
+
+  }  
+
+}
 
 
 /* Landscape phone to portrait tablet */
@@ -246,47 +288,56 @@ i {
     font-size:10pt;
   }
 
+  #header {
+
+    .logo {
+      position:absolute;
+      top:10px;
+      left:30px;
+      width:150px;
+    }
+
+    .phone {
+      top:0px;
+      left:60%;
+      width:100%;
+      h4 {
+        font-size:10pt;
+      }
+    }
+
+    .navbar-inner {
+      padding-left:0px;
+      padding-right:0px;
+      padding-top:80px;
+      min-height:30px;
+    }
+
+    .volunteer-button {
+      width:95%;
+      position:relative;
+    }
+
+    .header-button {
+      width:98%;
+      position:relative;
+      bottom:0px;
+      right:0px;
+    }
+
+  } 
   .story-wrapper {
     text-align: center
   }
 
-  .header {
-    .navbar-inner {
-      padding-left:0px;
-      padding-right:0px;
-    }
-
-    .header-button {
-      width:44%;
-      margin-top:40px;
-    }
-  }
 
   .flex-container {
-    padding-top:100px;
 
     .carousel-text {
       display:none;
     }
   }      
 
-  .logo {
-    padding-left:20px;
-    top: 5px;
-    img {
-      width:65%;
-    }
-  }
-
-  .phone {
-    h1 {
-      font-size:16px;
-    }
-    position:absolute;
-    top:0;
-    right:50px;
-
-  }
 }
 
 /* Landscape phones and down */
