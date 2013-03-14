@@ -10,7 +10,7 @@
             <%= raw @page.content_for(:slide1) %>
             <div class="row-fluid">
               <div class="span4 offset7">
-                <%= link_to "Learn More","/test", :class => "btn btn-primary btn-large btn-block" %>
+                <%= link_to "Learn More","/what", :class => "btn btn-primary btn-large btn-block" %>
               </div>            
             </div>
           </div>
@@ -24,7 +24,7 @@
               <%= raw @page.content_for(:slide2) %>
               <div class="row-fluid">
                <div class="span4 offset7">
-                <%= link_to "Learn More","/test", :class => "btn btn-primary btn-large btn-block" %>
+                <%= link_to "Learn More","/why", :class => "btn btn-primary btn-large btn-block" %>
               </div>       
             </div>
           </div>
@@ -39,7 +39,7 @@
             <%= raw @page.content_for(:slide3) %>
             <div class="row-fluid">
              <div class="span4 offset7">
-              <%= link_to "Learn More","/test", :class => "btn btn-primary btn-large btn-block" %>
+              <%= link_to "Learn More","/when", :class => "btn btn-primary btn-large btn-block" %>
             </div>       
           </div>         
         </div>
@@ -81,11 +81,11 @@
     <div class="row-fluid ">
       <div class="span6">
         <div class="row-fluid left-story">
-          <div class="span6 story-image">
+          <div class="span4 story-image">
             <%= image_tag @page.images[0].url, :class => "img-circle" %>
           </div>
 
-          <div class="span6 story">
+          <div class="span8 story">
             <%= raw @page.content_for(:left_story) %>
           </div>
         </div>
@@ -93,10 +93,10 @@
       <div class="span6 ">
         <div class="row-fluid right-story">      
 
-          <div class="span6 story">
+          <div class="span8 story">
             <%= raw @page.content_for(:right_story) %>
           </div>
-          <div class="span6 story-image">
+          <div class="span4 story-image">
             <%= image_tag @page.images[1].url, :class => "img-circle" %>
           </div>
         </div>

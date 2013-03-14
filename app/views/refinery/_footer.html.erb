@@ -1,29 +1,13 @@
 <div class="container-fluid">
-
 	<div class="row-fluid">
 		<div class="span3">
-			<h2>Donate</h2>
-			<p><%= link_to "Please support Hospice of the Twin Cities", "/donations-for-hospice-in-the-twin-cities" %></p>
+			<%= raw @footer.content_for :section1 %>
 		</div>
 		<div class="span3">
-			<h2>Want to Volunteer?</h2>
-			<p><%= link_to "Find out more about ways you can help.", "/htcs/volunteers/new" %></p>
+			<%= raw @footer.content_for :section2 %>
 		</div>
 		<div class="span3">
-			<h2>Careers</h2>
-			<p><%= link_to "View our list of job opportunities", "/careers-hospice-of-the-twin-cities" %></p>
+			<%= raw @footer.content_for :section3 %>
 		</div>
-		<div class="span1">
-			<p class="pull-left"><a href="https://www.facebook.com/pages/Hospice-of-the-Twin-Cities/223235387817446" class="social-link"><i class="icon-4x icon-facebook"></i></a></p>
-		</div>
-		<div class="span1">
-			<p class="pull-left"><a href="http://www.twitter.com/hospice_tc" class="social-link"><i class="icon-4x icon-twitter"></i></a></p>
-		</div>
-		<div class="span1">			
-			<p class="pull-left"><a href="http://www.linkedin.com/company/hospice-of-the-twin-cities" class="social-link"><i class="icon-4x icon-linkedin"></i></a></p>
-		</div>
-
 	</div>
-</div>
-
 </div>

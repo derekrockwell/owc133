@@ -9,6 +9,16 @@ $gridGutterWidth: 0px;
 @import "twitter/bootstrap";
 @import "twitter/bootstrap-responsive";
 
+
+html, body {
+  margin: auto auto;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  font-family: 'Open Sans','Segoe UI','Helvetica','Arial', sans-serif;
+}
+
 h1,h2,h3,h4,h5,h6 {
   text-transform: uppercase;
   font-family: 'Roboto Condensed', 'Segoe UI', 'Helvetica','Arial',sans-serif;
@@ -24,17 +34,6 @@ p {
   font-size:11pt;
 }
 
-
-
-html, body {
-  margin: auto auto;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  overflow-x: hidden;
-  font-family: 'Open Sans','Segoe UI','Helvetica','Arial', sans-serif;
-}
-
 #page_container {
   overflow:hidden; 
   margin: auto auto; 
@@ -43,6 +42,7 @@ html, body {
 #page {
   width:100%;
   padding-bottom:150px;
+  min-height: 800px;
   background-image: url('/assets/stories_tile.png');
   background-repeat: repeat;
 
@@ -95,11 +95,11 @@ i {
   width:inherit;
   background:#deebe1;
   color:#00382f;
-  height:150px;
   margin: auto auto;
 
+
   .container-fluid {
-    padding:0px 20px;
+    padding:10px 20px;
   }
 }
 
