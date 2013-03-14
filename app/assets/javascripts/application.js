@@ -11,13 +11,14 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree
 
 
-$(window).load(function() {
+$(window).ready(function() {
     $('.flexslider').flexslider({
         controlsContainer: ".switches-container",
         controlNav: true,
