@@ -8,6 +8,7 @@ gem 'anjlab-bootstrap-rails', '>= 2.2', :require => 'bootstrap-rails'
 gem "font-awesome-rails"
 gem "simple_form"
 gem "taps"
+gem "turbolinks"
 group :development, :test do
 	gem 'sqlite3'
 	gem "quiet_assets", ">= 1.0.1"
