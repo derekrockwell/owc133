@@ -82,7 +82,7 @@
       <div class="span6">
         <div class="row-fluid left-story">
           <div class="span4 story-image">
-            <%= image_tag @page.images[0].url, :class => "img-circle" %>
+            <%= image_tag @page.images[0].url, :class => "img-circle" if @page.images.length > 0 %>
           </div>
 
           <div class="span8 story">
@@ -97,7 +97,7 @@
             <%= raw @page.content_for(:right_story) %>
           </div>
           <div class="span4 story-image">
-            <%= image_tag @page.images[1].url, :class => "img-circle" %>
+            <%= image_tag @page.images[1].url, :class => "img-circle" if @page.images.length > 1 %>
           </div>
         </div>
       </div>
