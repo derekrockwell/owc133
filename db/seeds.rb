@@ -21,8 +21,6 @@ Refinery::Calendar::Engine.load_seed
 # Added by Refinery CMS Page Menus extension
 Refinery::Menus::Engine.load_seed
 
-PAGE_SEED = YAML.load_file("#{RAILS_ROOT}/db/pages.yml")
-
 puts "loading custom menus, pages, etc"
 
 puts "ensuring default custom menu"
