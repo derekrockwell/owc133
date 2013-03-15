@@ -19,6 +19,36 @@ module Refinery
         present(@page)
       end
 
+      def workreport
+        # 2013-03-15 - DECj: Taking a crack at a Work Hours Report
+        logger.info("In workreport")
+
+        logger.info("Params = #{params}")
+        # If you call it like this: 
+        # http://localhost:3000/workreport?start_date=01/01/2013&end_date=03/10/2013
+        # You'll get these params:
+        # Params = {"start_date"=>"01/01/2013", "end_date"=>"03/10/2013", 
+        #     "controller"=>"refinery/htcs/work_hours", "action"=>"workreport", "locale"=>:en}
+        # Gather all work hours in the date range
+
+        start_date = params[:start_date]
+        end_date = params[:end_date]
+
+        logger.info("Searching between #{start_date} and #{end_date}")
+
+        @work_hours = WorkHour.where("activity_date >= ? and activity_date <= ?", start_date, end_date)
+
+        if @work_hours != nil
+          logger.info("found #{@work_hours.count} records")
+        else
+          logger.info("No work hours found")
+        end
+
+        # Make it look nice with bootstrap
+
+
+      end
+
 
       def new
         # Can only add work hours for the logged-in volunteer

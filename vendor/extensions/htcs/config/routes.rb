@@ -5,6 +5,9 @@ Refinery::Core::Engine.routes.append do
   post "/volunteers/sign_in"    => "refinery/htcs/volunteer_sessions#create"
   delete "/volunteers/sign_out" => "refinery/htcs/volunteer_sessions#destroy"
 
+  
+  match '/workreport' => 'htcs/work_hours#workreport'
+
   # Admin routes
   namespace :htcs, :path => '' do
     namespace :admin, :path => 'refinery' do
