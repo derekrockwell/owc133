@@ -56,6 +56,40 @@ i {
   color:$headerGreen;
 }
 
+.btn {
+  border: none;
+  text-shadow: none;  
+  border-radius: 0px; 
+  font-family: "Roboto Condensed","Segoe UI","Helvetica","Arial",sans-serif; 
+  text-transform: uppercase; 
+
+  &.btn-info {
+    background: none #FFF;
+    color: #64c04b; 
+    margin: 15px 0 0 0;
+  }
+
+  &.volunteer-button {
+    position:absolute;
+    top:0px;
+    right:0px;
+    color: #FFF; 
+    line-height: 20px; 
+    font-size: 16px; 
+    box-shadow: none; 
+    background: none #ffba00; 
+    -webkit-border-radius: 0px; 
+    -moz-border-radius: 0px; 
+    -webkit-box-shadow: none; 
+    -moz-box-shadow: none; 
+    border-radius: 0px; 
+    border: none; 
+    padding: 8px 12px 8px 12px;
+  }
+}
+
+
+
 .flex-container {
 
   .flexslider {
@@ -76,17 +110,7 @@ i {
     p {
       font-style:italic;
     }
-    .btn-primary {
-      border: none; 
-      color: #64c04b; 
-      text-shadow: none; 
-      background: none #FFF;
-      border-radius: 0px; 
-      font-family: "Roboto Condensed","Segoe UI","Helvetica","Arial",sans-serif; 
-      text-transform: uppercase; 
-      padding: 10px 5px; 
-      margin: 15px 0 0 0;
-    }
+
   }
 }
 
@@ -115,9 +139,22 @@ i {
   color:#00382f;
   margin: auto auto;
 
-
   .container-fluid {
-    padding:10px 20px;
+    padding:10px 30px;
+
+    .span3 {
+      padding: 0px 10px;
+    }
+  }
+
+  h2 {
+    font-size:16pt;
+  }
+
+  a {
+    font-size:12pt;
+    text-transform: none;
+    text-decoration: underline;
   }
 }
 
@@ -202,26 +239,6 @@ i {
       color:gray;
       font-weight:normal;
     }
-  }
-
-  .volunteer-button {
-    position:absolute;
-    top:0px;
-    right:0px;
-    color: #FFF; 
-    line-height: 20px; 
-    font-size: 16px; 
-    box-shadow: none; 
-    text-shadow: none; 
-    background: none #ffba00; 
-    -webkit-border-radius: 0px; 
-    -moz-border-radius: 0px; 
-    -webkit-box-shadow: none; 
-    -moz-box-shadow: none; 
-    border-radius: 0px; 
-    border: none; 
-    font-family: "Roboto Condensed","Segoe UI","Helvetica","Arial",sans-serif; 
-    padding: 8px 12px 8px 12px;
   }
 
   .logo {
@@ -507,6 +524,13 @@ i {
     text-align: center;
   }
 
+  .footer {
+    text-align:center;
+
+    .social-links {
+      text-align:center;
+    }
+  }
 
   .flex-container {
 
