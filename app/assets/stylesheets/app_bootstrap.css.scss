@@ -34,6 +34,10 @@ p {
   font-size:11pt;
 }
 
+.first-word {
+  color:#64c04b;
+}
+
 #page_container {
   overflow:hidden; 
   margin: auto auto; 
@@ -273,20 +277,29 @@ i {
 @media (min-width:1801px) {
 
   h1 {
-    font-size:20pt;
+    font-size:30pt;
+    line-height:30pt;
+  }
+
+  h2 {
+    font-size:22pt;
   }
 
   p {
-    font-size:12pt;
+    font-size:14pt;
   }
 
   .flex-container {
+
+
     .carousel-text {
       top:30px;
       left:50px;
       width:55%;
     }
   }
+
+
 
   #page_container {
     width:75%;   
