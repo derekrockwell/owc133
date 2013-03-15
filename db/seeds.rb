@@ -34,12 +34,12 @@ puts "create base custom pages and their parts"
 (Refinery.i18n_enabled? ? Refinery::I18n.frontend_locales : [:en]).each do |lang|
   I18n.locale = lang
 
-  %w(What Why When Volunteer).each do |slug|
+  %w(what why when volunteer).each do |slug|
     if Refinery::Page.where(:slug => slug).empty?
       page = Refinery::Page.create(
-        :title => slug,
+        :title => slug.uppercase,
         :deletable => false,
-        :view_template => slug.downcase
+        :view_template => slug
       )
       Refinery::Pages.default_parts.each_with_index do |default_page_part, index|
         page.parts.create(:title => default_page_part, :body => nil, :position => index)
@@ -59,7 +59,7 @@ end
 
 #clean up the homepage parts
 Refinery::Page.where(:link_url => "/").first.parts.each do |part|
-  part.delete if (part.title == "Body" || "Side Body")
+  part.delete if (part.title == "Body" || part.title == "Side Body")
 end
 
 #create homepage parts
