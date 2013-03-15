@@ -21,6 +21,7 @@ Refinery::Calendar::Engine.load_seed
 # Added by Refinery CMS Page Menus extension
 Refinery::Menus::Engine.load_seed
 
+PAGE_SEED = YAML.load_file("#{RAILS_ROOT}/db/pages.yml")
 
 puts "loading custom menus, pages, etc"
 
@@ -58,5 +59,23 @@ if !Refinery::Page.exists?(:slug => "footer")
   end
 end
 
+#clean up the homepage parts
+Refinery::Page.where(:link_url => "/").first.parts.each do |part|
+  part.delete if (part.title == "Body" || "Side Body")
+end
+
+#create homepage parts
+@page = Refinery::Page.where(:link_url => "/").first
+parts = %w[slide1 slide2 slide3 what why when left_story right_story]
+
+parts.each do |part|
+  @page.parts.create(:title => part) unless @page.parts.collect(&:title).include? part
+end
+
 # Added by Refinery CMS Htcs extension
 Refinery::Htcs::Engine.load_seed
+#this should probably be extracted to the htcs gem, but it is pretty
+#tied to the HOTC app yet (not good)
+@page = ::Refinery::Page.where(:slug => 'volunteer-information').first
+@page.link_url = "/htcs/volunteers/new"
+@page.save

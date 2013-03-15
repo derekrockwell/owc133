@@ -18,7 +18,7 @@
         <% else %>
         <p><%= t('.no_blog_articles_yet') %></p>
         <% end %>
-        <% end %>
+        <%end%>
 
         <% content_for :body_content_right_prepend do -%>
         <%= raw @page.content_for(Refinery::Pages.default_parts.second.to_sym) %>
@@ -30,8 +30,10 @@
       </div>
 
       <div class="span9 well">
+        <% if @posts.any? then %>
         <% @post = @posts.first%>
         <%= render 'post' %>
+        <% end %>
       </div>
     </div>
   </div>

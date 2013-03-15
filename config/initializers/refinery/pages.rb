@@ -11,7 +11,7 @@ Refinery::Pages.configure do |config|
   # end
 
   # Configure global page default parts
-  config.default_parts = []
+  config.default_parts = ["Body"]
 
   # Configure whether to allow adding new page parts
   config.new_page_parts = true

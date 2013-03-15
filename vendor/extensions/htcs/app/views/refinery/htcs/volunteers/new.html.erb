@@ -24,11 +24,7 @@
             <div class="span9 content">
                 <div class="row-fluid">
                     <div class="span11">
-                        <h2>Volunteering for Hospice of the Twin Cities </h2>
-                        <p>Many people walk through our doors looking for an opportunity to give back. We all come with different reasons and different stories. The life journeys you have had up to this moment have given you valuable strengths that you can use as a volunteer at Hospice of the Twin Cities.</p>
-                        <p>You may have had a loved one in hospice and appreciated the care so much that you in turn want to give back. Perhaps you are a retired veteran and can connect with our patients at the Minnesota Veterans Home. You may be deeply spiritual and feel the need to help in that area.
-                            <p>If the one-on-one patient experience is not for you, perhaps you would prefer to help out in the office with administrative tasks such as filing and data entry. Your skills could also be used in creative ways, such as artwork, knitting, blanket making or event planning. There are many ways in which you can give.</p><p>We have a vast family of volunteers that come together to create a unique environment at the end of life. The gift of time and presence, in many cases is the most important thing the volunteer offers.</p>
-                        <p><a href="/assets/VolunteerApplication.pdf">Complete the application form</a> and you will be on your way to a rewarding experience.</p>
+                        <%= raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) if Refinery::Pages.default_parts.any? %>
                     </div>
                 </div>
 
