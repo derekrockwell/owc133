@@ -12,7 +12,9 @@ gem 'jquery-turbolinks'
 gem "turbolinks"
 
 group :development, :test do
-	gem 'sqlite3'
+	#gem 'sqlite3'
+	# 2013-03-15 - DECj: Convert to pg
+	gem 'pg'
 	gem "quiet_assets", ">= 1.0.1"
   gem "debugger"
 end

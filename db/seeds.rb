@@ -36,8 +36,9 @@ puts "create base custom pages and their parts"
 
   %w(what why when volunteer).each do |slug|
     if Refinery::Page.where(:slug => slug).empty?
+      # 2013-03-15 - DECj: this is .upcase not .uppercase
       page = Refinery::Page.create(
-        :title => slug.uppercase,
+        :title => slug.upcase,
         :deletable => false,
         :view_template => slug
       )
