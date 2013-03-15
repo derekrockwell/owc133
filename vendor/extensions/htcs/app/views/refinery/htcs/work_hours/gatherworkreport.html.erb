@@ -1,0 +1,40 @@
+
+ <div class="span9 well">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <%= raw @page.content_for(:body) if @page %>
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span8">
+
+
+					<% content_for :body do %>
+					  <h3>Work Hour Report</h3>
+					  <h4>Selection Criteria</h4>
+					  <p>&nbsp;</p>
+
+						<%= form_tag "/runworkreport" do %>
+						  <%= label_tag "Start Date" %>
+						  <%= text_field_tag "start_date", "01/01/2013" %>
+						  <%= label_tag "End Date" %>
+						  <%= text_field_tag "end_date", "12/31/2013" %>
+						  <%= submit_tag "Run Report" %>
+						<% end %>
+
+					<% end %>
+  					
+
+					<%= render '/refinery/content_page' %>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+</div>
+
+
+

@@ -6,7 +6,8 @@ Refinery::Core::Engine.routes.append do
   delete "/volunteers/sign_out" => "refinery/htcs/volunteer_sessions#destroy"
 
   
-  match '/workreport' => 'htcs/work_hours#workreport'
+  match '/runworkreport' => 'htcs/work_hours#runworkreport'
+  match '/workreport' => 'htcs/work_hours#gatherworkreport'
 
   # Admin routes
   namespace :htcs, :path => '' do

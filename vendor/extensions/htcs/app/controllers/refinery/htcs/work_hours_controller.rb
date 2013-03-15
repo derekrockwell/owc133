@@ -2,7 +2,8 @@ module Refinery
   module Htcs
     class WorkHoursController < ::ApplicationController
 
-      before_filter :ensure_logged_in_volunteer
+      before_filter :ensure_logged_in_volunteer, :except => [:runworkreport, :gatherworkreport]
+      before_filter :ensure_admin_user, :only => [:runworkreport, :gatherworkreport]
       before_filter :find_all_work_hours
       before_filter :find_page
 
@@ -19,7 +20,8 @@ module Refinery
         present(@page)
       end
 
-      def workreport
+
+      def runworkreport
         # 2013-03-15 - DECj: Taking a crack at a Work Hours Report
         logger.info("In workreport")
 
@@ -31,12 +33,12 @@ module Refinery
         #     "controller"=>"refinery/htcs/work_hours", "action"=>"workreport", "locale"=>:en}
         # Gather all work hours in the date range
 
-        start_date = params[:start_date]
-        end_date = params[:end_date]
+        @start_date = params[:start_date]
+        @end_date = params[:end_date]
 
-        logger.info("Searching between #{start_date} and #{end_date}")
+        logger.info("Searching between #{@start_date} and #{@end_date}")
 
-        @work_hours = WorkHour.where("activity_date >= ? and activity_date <= ?", start_date, end_date)
+        @work_hours = WorkHour.where("activity_date >= ? and activity_date <= ?", @start_date, @end_date).order(:activity_date)
 
         if @work_hours != nil
           logger.info("found #{@work_hours.count} records")
@@ -44,10 +46,16 @@ module Refinery
           logger.info("No work hours found")
         end
 
-        # Make it look nice with bootstrap
+        # Make it look nice with bootstrap... This will automatically render 
+        # /vendor/extensions/htcs/views/refinery/htcs/work_hours/workreport.html.erb
+      end
 
+
+      def gatherworkreport
+        # Bring the user to a form to gather two variables, then move them to runworkreport
 
       end
+
 
 
       def new
@@ -103,6 +111,16 @@ module Refinery
         if current_volunteer.nil?
           # new_volunteer_session_path
           redirect_to '/volunteers/sign_in'
+          return false
+        end
+      end
+
+
+      def ensure_admin_user
+        # You must be a logged in refinery user
+        if refinery_user? == false
+          # I want you to be a REFINERY user now...
+          redirect_to '/refinery'
           return false
         end
       end
