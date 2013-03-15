@@ -52,7 +52,7 @@
 
 <div class="carousel-switches">
   <div class="switches-container container-fluid">
-    <div id="switches" class="row-fluid visible-tablet visible-desktop">
+    <div id="switches" class="row-fluid pagination-centered visible-tablet visible-desktop">
       <div class="span4 carousel-switch">
         <%= raw @page.content_for(:what) %>
       </div>
@@ -77,7 +77,7 @@
   </div>
 </div>
 
-  <div class="container-fluid story-wrapper">
+  <div class="container-fluid">
     <div class="row-fluid ">
       <div class="span6">
         <div class="row-fluid left-story">
@@ -85,15 +85,15 @@
             <%= image_tag @page.images[0].url, :class => "img-circle" if @page.images.length > 0 %>
           </div>
 
-          <div class="span8 story">
+          <div class="span8 story pagination-right">
             <%= raw @page.content_for(:left_story) %>
           </div>
         </div>
       </div>
       <div class="span6 ">
-        <div class="row-fluid right-story">      
+        <div class="row-fluid right-story ">      
 
-          <div class="span8 story">
+          <div class="span8 story pagination-left">
             <%= raw @page.content_for(:right_story) %>
           </div>
           <div class="span4 story-image">

@@ -103,7 +103,7 @@ end
   I18n.locale = lang
 
   page = "Volunteer Information"
-  url = "/#{page.downcase.gsub('','_')}"
+  url = "htcs/volunteers/new"
   if Refinery::Page.where(:link_url => url).empty?
       page = Refinery::Page.create(
         :title => page,
