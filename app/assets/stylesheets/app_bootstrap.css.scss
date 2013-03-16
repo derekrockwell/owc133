@@ -135,24 +135,25 @@ i {
 
 #footer {
   width:inherit;
-  background:#deebe1;
+  
   color:#00382f;
   margin: auto auto;
 
   .container-fluid {
     padding:10px 30px;
-
+    background:#cfe2d3;
     .span3 {
       padding: 0px 10px;
     }
   }
 
   h2 {
-    font-size:16pt;
+    font-size:14pt;
+    line-height:10px;
   }
 
   a {
-    font-size:12pt;
+    font-size:10pt;
     text-transform: none;
     text-decoration: underline;
   }
@@ -213,39 +214,56 @@ i {
           -moz-box-shadow:none;
         }
       }
+
+      &.last {
+        font-style: italic;
+        a {
+        color:#68C3C4;
+      }
+
     }
   }
+}
 
-  .navbar-inner {
-    padding-top:40px;
-    padding-left:0px;
-    padding-right:0px;    
-    background: rgba(255,255,255,.9);
-    border-radius: 0px; 
-    border: none; 
-    box-shadow: none; 
-    background: #FFF;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px; 
-    -webkit-box-shadow: none; 
-    -moz-box-shadow: none;
-  }
-  .phone {
-    position:absolute;
-    top:0px;
-    right:15%;
-
-    .phone-text {
-      color:gray;
-      font-weight:normal;
-    }
-  }
-
-  .logo {
+.wavy {
+  background: url("/assets/test3.png") center center;
+  background-size: 100% 100%;
+  height:104px;
+  img {
     width:100%;
-    position:absolute;
-    top:20px;
-  }  
+  }
+}
+
+.navbar-inner {
+  padding-top:40px;
+  padding-left:0px;
+  padding-right:0px;    
+  background: rgba(255,255,255,.9);
+  border-radius: 0px; 
+  border: none; 
+  box-shadow: none; 
+  background: #FFF;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px; 
+  -webkit-box-shadow: none; 
+  -moz-box-shadow: none;
+}
+.phone {
+  position:absolute;
+  top:0px;
+  right:15%;
+
+  .phone-text {
+    color:gray;
+    font-weight:normal;
+  }
+}
+
+.logo {
+  width:100%;
+  position:absolute;
+  top:20px;
+}  
 
 }
 
@@ -387,7 +405,8 @@ i {
   }
 
   #page {
-    padding-bottom:50px;
+    padding-bottom:20px;
+    min-height:400px;
   }
 
   .flex-container {
@@ -401,6 +420,14 @@ i {
       .btn {
         padding:5px;
       }
+    }
+  }
+
+  #footer {
+
+    h2 {
+      font-size:12pt;
+      line-height:20px;
     }
   }
 
