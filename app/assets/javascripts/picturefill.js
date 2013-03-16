@@ -13,8 +13,8 @@
             if( ps[ i ].getAttribute( "data-picture" ) !== null ){
 
                 var sources = ps[ i ].getElementsByTagName( "div" ),
-                    matches = [];
-            
+                matches = [];
+                
                 // See if which sources match
                 for( var j = 0, jl = sources.length; j < jl; j++ ){
                     var media = sources[ j ].getAttribute( "data-media" );
@@ -40,9 +40,9 @@
                 ps[ i ].removeChild( picImg );
             }
         }
-        }
-    };
-    
+    }
+};
+
     // Run on resize and domready (w.load as a fallback)
     if( w.addEventListener ){
         w.addEventListener( "resize", w.picturefill, false );
@@ -51,10 +51,15 @@
             // Run once only
             w.removeEventListener( "load", w.picturefill, false );
         }, false );
+        w.addEventListener( "ready", function(){
+            w.picturefill();
+        }, false );
         w.addEventListener( "load", w.picturefill, false );
     }
     else if( w.attachEvent ){
         w.attachEvent( "onload", w.picturefill );
     }
+
+
     
 }( this ));
