@@ -51,7 +51,7 @@
             // Run once only
             w.removeEventListener( "load", w.picturefill, false );
         }, false );
-        w.addEventListener( "ready", function(){
+        w.addEventListener( "page:load", function(){
             w.picturefill();
         }, false );
         w.addEventListener( "load", w.picturefill, false );
