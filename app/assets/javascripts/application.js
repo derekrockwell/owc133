@@ -12,9 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.flexslider
 //= require twitter/bootstrap
 //= require turbolinks
-//= require_tree
+//= require picturefill
 
 
 $(window).ready(function() {
