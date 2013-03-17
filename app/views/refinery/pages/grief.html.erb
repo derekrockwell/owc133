@@ -1,0 +1,21 @@
+<div class="flower-header">
+</div>
+
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="span3 sidebar">
+				<%= render :partial => "/refinery/sidebar", :locals => {
+					:roots => refinery_menu("grief_sidebar")
+				} %>
+			</div>
+
+			<div class="span9 content">
+				<%= render '/refinery/content_page' %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
