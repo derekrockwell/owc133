@@ -20,6 +20,8 @@
 
 $(window).ready(function() {
     $('.flexslider').flexslider({
+        slideshowSpeed: 12000,
+        pauseOnHover: true,
         controlsContainer: ".switches-container",
         controlNav: true,
         manualControls: "#switches .carousel-switch"
