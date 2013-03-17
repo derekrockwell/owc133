@@ -320,16 +320,16 @@ i {
 @media (min-width:1801px) {
 
   h1 {
-    font-size:30pt;
-    line-height:30pt;
+    font-size:22pt;
+    line-height:22pt;
   }
 
   h2 {
-    font-size:22pt;
+    font-size:18pt;
   }
 
   p {
-    font-size:14pt;
+    font-size:13pt;
   }
 
   .flex-container {
@@ -350,15 +350,16 @@ i {
 @media (max-width:1800px) and (min-width:1501px) {
 
   h1 {
-    font-size:24pt;
+    font-size:21pt;
+    font-size:20pt;
   }
 
   p {
-    font-size:14pt;
+    font-size:12pt;
   }
 
   h2 {
-    font-size: 20pt;
+    font-size: 17pt;
   }
   .flex-container {
     .carousel-text {
@@ -380,11 +381,16 @@ i {
 @media (min-width: 1200px) and (max-width: 1500px) {
 
   h1 {
-    font-size:20pt;
+    font-size:18pt;
+    line-height: 18pt;
+  }
+
+  h2 {
+    font-size:16pt;
   }
 
   p {
-    font-size:12pt;
+    font-size:11pt;
   }
 
   .flex-container {
