@@ -117,16 +117,21 @@ i {
 
   .carousel-text {
     position:absolute;
-    top:20px;
+    top:40px;
     color:white;
-    left:20px;
-    width:75%;
+    left:65px;
+    width:45%;
     h1 {
       color:white;
+      font-size: 40px;
+      line-height: 40px;
+      margin-bottom: 20px;
     }
 
     p {
+      font-size: 18px;
       font-style:italic;
+      line-height: 27px;
     }
 
   }
@@ -134,6 +139,10 @@ i {
 
 .sidebar {
   padding:2em;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .content {
@@ -188,9 +197,15 @@ i {
     background: black;
     padding-top: 10px;
     color:gray;
+    text-transform: none;
     a {
       color: gray;
+      text-decoration: none;
       padding: 5px;
+
+      &:active, &:focus, &:hover {
+        color: white;
+      }
     }
   }
 }
@@ -309,11 +324,21 @@ i {
 
 .story {
   margin:0px !important;
-  padding:1em;
+  padding: 2em 1em 1em;
+
+  h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 23px;
+  }
 }
 
 .story-image {
-  padding: 1em;
+  padding: 2em;
 }
 
 .story-wrapper {
@@ -328,24 +353,54 @@ i {
 
 
   .carousel-switch {
-    padding-left:15px;
-    padding-right:15px;
-    border-width:1px;
-    border-color:white;
-    border-style: none solid ;
-    margin:0 !important;
-    color:#fff;
-    cursor:pointer;
-    min-height:100px;
+    border-bottom: none;
+    border-left: 1px solid #75a095;
+    border-top: none;
+    color: white;
+    cursor: pointer;
+    height: 100px;
+    margin: 0px !important;
+    padding: .75em 1.5em .5em 1.5em;
+    text-align: left;
+    
     h2 {
       color:white;
+      margin-bottom: 2px;
+    }
+    
+    p {
+      font-size: 15px;
+      line-height: 16px;
     }
 
-    &:hover, &.flex-active {
+    &:active, &:focus, &:hover, &.flex-active {
       background:#458272;
     }
+  }
+}
 
+.nav-pills {
+  &> li {
+    &> a {
+      border-bottom: 1px solid #d9d9d9;
+      border-left: 1px solid #d9d9d9;
+      border-radius: 0px;
+      -moz-border-radius: 0;
+      -webkit-border-radius: 0;
+      font-size: 14px;
+      line-height: 20px;
+      margin: 0;
+      padding: 6px 10px 6px 10px;
+      text-decoration: none;
+    }
+  }
+}
 
+.nav-pills.nav-stacked {
+  &> li {
+    &> a {
+      margin-bottom: 0px;
+    }
   }
 }
 
@@ -480,8 +535,9 @@ i {
   #footer {
 
     h2 {
-      font-size:12pt;
-      line-height:20px;
+      color: #00372e;
+      font-size:17pt;
+      line-height:10px;
     }
   }
 
