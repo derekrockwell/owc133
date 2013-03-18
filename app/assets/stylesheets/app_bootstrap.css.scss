@@ -1,6 +1,11 @@
 $headerGreen:#367259;
 $linkColor: $headerGreen;
+$linkHoverColor: #1d3e30;
 $navbarLinkColor: $headerGreen;
+$btnPrimaryBackground: $linkColor;
+$btnPrimaryBackgroundHighlight: $linkHoverColor;
+$btnInfoBackground: #ffffff;
+$btnInfoBackgroundHighlight: #ddffdd;
 $gridColumnWidth: 70px;
 $gridGutterWidth768: 0px;
 $gridGutterWidth1200: 0px;
@@ -34,6 +39,19 @@ p {
   font-size:11pt;
 }
 
+a, a * {
+  color: $linkColor;
+  text-decoration: underline;
+
+  &:active, &:focus, &:hover {
+    color: $linkHoverColor;
+  }
+
+  &.btn {
+    text-decoration: none;
+  }
+}
+
 .first-word {
   color:#64c04b;
 }
@@ -65,7 +83,6 @@ i {
   text-transform: uppercase; 
 
   &.btn-info {
-    background: none #FFF;
     color: #64c04b; 
     margin: 15px 0 0 0;
   }
@@ -123,10 +140,6 @@ i {
   padding:2em;
 }
 
-.social-link {
-  text-decoration: none;
-}
-
 .flower-header {
   height:150px;
   width:100%;
@@ -156,11 +169,16 @@ i {
   a {
     font-size:10pt;
     text-transform: none;
-    text-decoration: underline;
   }
 
-  .social-links a {
-    text-decoration: none;
+  .social-links {
+    margin-top: 10px;
+    
+    a {
+      font-size: 45px;
+      margin: 0 10px;
+      text-decoration: none;
+    }
   }
 }
 
