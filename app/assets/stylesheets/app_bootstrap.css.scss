@@ -149,16 +149,19 @@ i {
 
 #footer {
   width:inherit;
-  
+  padding:0px;
   color:#00382f;
   margin: auto auto;
 
-  .container-fluid {
-    padding:0px 20px 5px 20px;
+  .info-footer {
     background:#cfe2d3;
-    .span3 {
-      padding: 0px 10px;
+    .row-fluid {
+      div {
+        padding-left:20px;
+        padding-right:20px;
+      }
     }
+
   }
 
   h2 {
@@ -178,6 +181,16 @@ i {
       font-size: 45px;
       margin: 0 10px;
       text-decoration: none;
+    }
+  }
+
+  .copyright-footer {
+    background: black;
+    padding-top: 10px;
+    color:gray;
+    a {
+      color: gray;
+      padding: 5px;
     }
   }
 }
@@ -311,18 +324,19 @@ i {
 .carousel-switches {
   background: #306956;
   border-top:2px solid white;
-  height:100px;
+  min-height:100px;
+
 
   .carousel-switch {
-
-    padding:1em;
+    padding-left:15px;
+    padding-right:15px;
     border-width:1px;
     border-color:white;
     border-style: none solid ;
     margin:0 !important;
     color:#fff;
     cursor:pointer;
-    height:100px;
+    min-height:100px;
     h2 {
       color:white;
     }
