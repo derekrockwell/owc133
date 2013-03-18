@@ -192,9 +192,15 @@ i {
     background: black;
     padding-top: 10px;
     color:gray;
+    text-transform: none;
     a {
       color: gray;
+      text-decoration: none;
       padding: 5px;
+
+      &:active, &:focus, &:hover {
+        color: white;
+      }
     }
   }
 }
