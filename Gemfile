@@ -16,7 +16,9 @@ group :development, :test do
 	# 2013-03-15 - DECj: Convert to pg
 	gem 'pg'
 	gem "quiet_assets", ">= 1.0.1"
-  gem "debugger"
+	gem "debugger"
+	gem "better_errors"
+	gem "binding_of_caller"
 end
 
 group :staging, :production do
@@ -34,7 +36,7 @@ group :assets do
 end
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.0.0'
+gem 'refinerycms', '= 2.0.9' #setting explicitly to 2.0.9 for now, 2.1.0 seems to have a bug
 
 # Specify additional Refinery CMS Extensions here (all optional):
 gem 'refinerycms-i18n', '~> 2.0.0'
