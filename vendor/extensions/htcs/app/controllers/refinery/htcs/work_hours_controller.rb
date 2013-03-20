@@ -38,7 +38,7 @@ module Refinery
 
         logger.info("Searching between #{@start_date} and #{@end_date}")
 
-        @work_hours = WorkHour.where("activity_date >= ? and activity_date <= ?", @start_date, @end_date).order(:activity_date)
+        @work_hours = WorkHour.where("activity_date >= ? and activity_date <= ?", @start_date, @end_date).order(:volunteer_id, :activity_date)
 
         if @work_hours != nil
           logger.info("found #{@work_hours.count} records")

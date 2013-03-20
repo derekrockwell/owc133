@@ -5,6 +5,10 @@ module Refinery
       before_filter :find_all_volunteers
       before_filter :find_page
 
+      # 2013-03-20 - DECj: Don't want any old fool to go to /volunteers and see them all,
+      #   or, to go to one and see him/her!
+      before_filter :ensure_admin_user, :only => [:index, :show]
+
       def index
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @volunteer in the line below:
@@ -71,6 +75,15 @@ module Refinery
 
       def find_page
         @page = ::Refinery::Page.where(:link_url => "/volunteers").first
+      end
+
+      def ensure_admin_user
+        # You must be a logged in refinery user
+        if refinery_user? == false
+          # I want you to be a REFINERY user now...
+          redirect_to '/refinery'
+          return false
+        end
       end
 
     end
