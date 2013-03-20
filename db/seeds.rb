@@ -80,3 +80,6 @@ Refinery::Htcs::Engine.load_seed
 @page = ::Refinery::Page.where(:slug => 'volunteer-information').first
 @page.link_url = "/htcs/volunteers/new"
 @page.save
+
+# Added by Refinery CMS Inquiries engine
+Refinery::Inquiries::Engine.load_seed

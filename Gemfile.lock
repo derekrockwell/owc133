@@ -222,6 +222,10 @@ GEM
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
       refinerycms-core (= 2.0.9)
+    refinerycms-inquiries (2.0.3)
+      filters_spam (~> 0.2)
+      refinerycms-core (~> 2.0.1)
+      refinerycms-settings (~> 2.0.1)
     refinerycms-page-images (2.0.1)
       refinerycms-pages (~> 2.0.0)
     refinerycms-pages (2.0.9)
@@ -311,6 +315,7 @@ DEPENDENCIES
   refinerycms-calendar (~> 2.0.0)!
   refinerycms-htcs!
   refinerycms-i18n (~> 2.0.0)
+  refinerycms-inquiries (~> 2.0.0)
   refinerycms-menus!
   refinerycms-page-images (~> 2.0.0)
   refinerycms-search (~> 2.0.0)
