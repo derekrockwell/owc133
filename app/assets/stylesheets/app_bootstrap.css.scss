@@ -64,10 +64,7 @@ a, a * {
 
 #page {
   width:100%;
-  padding-bottom:150px;
-  min-height: 800px;
-  background-image: url('/assets/stories_tile.png');
-  background-repeat: repeat;
+  min-height: 800px
 
 }
 
@@ -148,7 +145,10 @@ i {
 }
 
 .content {
-  padding:2em;
+  padding-left:20px;
+  padding-top:20px;
+  padding-right:20px;
+  padding-bottom:250px;
 }
 
 .flower-header {
@@ -224,6 +224,10 @@ i {
 .navbar {
   margin-bottom:0;
   text-transform: uppercase;
+
+  .btn  {
+    margin:0px;
+  }
 
   .active {
 
@@ -343,9 +347,11 @@ i {
   padding: 2em;
 }
 
+
 .story-wrapper {
   background-image: url('/assets/stories_tile.png');
   background-repeat: repeat;
+  padding-bottom:200px;
 }
 
 .carousel-switches {
