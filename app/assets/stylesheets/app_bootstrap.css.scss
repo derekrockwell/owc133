@@ -30,13 +30,18 @@ h1,h2,h3,h4,h5,h6 {
   color: $headerGreen;
 }
 
-h1,h2 {
-  font-size:20px;
-  line-height: 30px;
+h1 {
+  font-size:28px;
+  line-height: 28px;
+}
+
+h2 {
+  font-size:22px;
+  line-height:22px;
 }
 
 p {
-  font-size:11pt;
+  font-size:12pt;
 }
 
 a, a * {
@@ -119,18 +124,15 @@ i {
     top:40px;
     color:white;
     left:65px;
-    width:45%;
+    width:75%;
     h1 {
       color:white;
-      font-size: 40px;
-      line-height: 40px;
-      margin-bottom: 20px;
     }
 
     p {
-      font-size: 18px;
+      font-size: 16px;
       font-style:italic;
-      line-height: 27px;
+      line-height: 24px;
     }
 
   }
@@ -333,7 +335,7 @@ i {
   padding: 2em 1em 1em;
 
   h2 {
-    font-size: 32px;
+    font-size: 26px;
     margin-bottom: 15px;
   }
 
@@ -415,8 +417,8 @@ i {
 @media (min-width:1801px) {
 
   h1 {
-    font-size:22pt;
-    line-height:22pt;
+    font-size:26pt;
+    line-height:26pt;
   }
 
   h2 {
@@ -424,7 +426,7 @@ i {
   }
 
   p {
-    font-size:13pt;
+    font-size:16pt;
   }
 
   .flex-container {
@@ -434,23 +436,27 @@ i {
       top:30px;
       left:50px;
       width:55%;
+
+      p {
+        font-size:16pt;
+      }
     }
   }
 
   #page_container {
-    width:75%;   
+    width:80%;   
   }
 }
 
 @media (max-width:1800px) and (min-width:1501px) {
 
   h1 {
-    font-size:21pt;
-    font-size:20pt;
+    font-size:24pt;
+    font-size:24pt;
   }
 
   p {
-    font-size:12pt;
+    font-size:14pt;
   }
 
   h2 {
@@ -461,13 +467,17 @@ i {
       top:30px;
       left:50px;
       width:55%;
+
+      p {
+        font-size:15pt;
+      }
     }
 
 
   }
 
   #page_container {
-    width:80%;  
+    width:85%;  
   }
 
 }
@@ -475,25 +485,30 @@ i {
 /* Large desktop */
 @media (min-width: 1200px) and (max-width: 1500px) {
 
-  h1 {
-    font-size:18pt;
-    line-height: 18pt;
-  }
+
 
   h2 {
-    font-size:16pt;
+    font-size:14pt;
   }
 
   p {
-    font-size:11pt;
+    font-size:10pt;
+    line-height:9pt;
   }
 
   .flex-container {
     .carousel-text {
+
+      h1 {
+        font-size:15pt;
+        line-height: 12pt;
+      }
+
       top:30px;
       left:50px;
-      width:70%;
+      width:75%;
     }
+
   }
 
   #page_container {
@@ -522,8 +537,7 @@ i {
   }
 
   #page {
-    padding-bottom:20px;
-    min-height:400px;
+    min-height:300px;
   }
 
   .flex-container {
@@ -544,8 +558,8 @@ i {
 
     h2 {
       color: #00372e;
-      font-size:17pt;
-      line-height:10px;
+      font-size:13pt;
+      line-height:10pt;
     }
   }
 
@@ -669,14 +683,23 @@ i {
     text-align: center;
   }
 
+  .story-wrapper {
+    padding-bottom:50px;
+  }
   .story-image {
     text-align: center;
   }
 
-  .footer {
+  #footer {
     text-align:center;
 
     .social-links {
+      text-align:center;
+    }
+  }
+
+  .copyright-footer {
+    div {
       text-align:center;
     }
   }
