@@ -12,11 +12,13 @@ gem 'jquery-turbolinks'
 gem "turbolinks"
 
 group :development, :test do
-	#gem 'sqlite3'
+	gem 'sqlite3'
 	# 2013-03-15 - DECj: Convert to pg
 	gem 'pg'
 	gem "quiet_assets", ">= 1.0.1"
-  gem "debugger"
+	gem "debugger"
+	gem "better_errors"
+	gem "binding_of_caller"
 end
 
 group :staging, :production do
@@ -34,7 +36,7 @@ group :assets do
 end
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.0.0'
+gem 'refinerycms', '= 2.0.9' #setting explicitly to 2.0.9 for now, 2.1.0 seems to have a bug
 
 # Specify additional Refinery CMS Extensions here (all optional):
 gem 'refinerycms-i18n', '~> 2.0.0'
@@ -43,6 +45,7 @@ gem 'refinerycms-search', '~> 2.0.0'
 gem 'refinerycms-page-images', '~> 2.0.0'
 gem 'refinerycms-menus', git: 'https://github.com/pylonweb/refinerycms-menus.git'
 gem 'refinerycms-calendar', '~>2.0.0', :git => 'https://github.com/sbeam/refinerycms-calendar.git'
+gem 'refinerycms-inquiries', '~> 2.0.0'
 # The Heroku gem allows you to interface with Heroku's API
 gem 'heroku'
 

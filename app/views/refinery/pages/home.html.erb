@@ -1,58 +1,67 @@
 <!-- Place somewhere in the <body> of your page -->
-<div class="flex-container">
+<div class="flex-container hidden-phone">
   <div class="flexslider">
     <ul class="slides">
       <li class="slider-bg">
-       <%= image_tag "slide1.jpg" %>
-       <div class="container-fluid carousel-text">
-        <div class="row-fluid">
-          <div class="span9">
-            <%= raw @page.content_for(:slide1) %>
-            <div class="row-fluid">
-              <div class="span4 offset7">
-                <%= link_to "Learn More","/what", :class => "btn btn-primary btn-large btn-block" %>
-              </div>            
-            </div>
-          </div>
-        </div>    
-      </li>
-      <li class= "slider-bg">
-        <%= image_tag "slide2.jpg" %>
+        <div data-picture>
+          <div data-src="/assets/slide1.jpg"></div>
+          <div data-src="" data-media="(max-width: 767px)"></div>
+        </div>
         <div class="container-fluid carousel-text">
           <div class="row-fluid">
             <div class="span9">
-              <%= raw @page.content_for(:slide2) %>
+              <%= raw @page.content_for(:slide1) %>
+              <div class="row-fluid">
+                <div class="span4 offset7">
+                  <%= link_to "Learn More","/what", :class => "btn btn-info btn-large btn-block" %>
+                </div>            
+              </div>
+            </div>
+          </div>    
+        </li>
+        <li class= "slider-bg">
+          <div data-picture>
+            <div data-src="/assets/slide2.jpg"></div>
+            <div data-src="" data-media="(max-width: 767px)"></div>
+          </div>
+          <div class="container-fluid carousel-text">
+            <div class="row-fluid">
+              <div class="span9">
+                <%= raw @page.content_for(:slide2) %>
+                <div class="row-fluid">
+                 <div class="span4 offset7">
+                  <%= link_to "Learn More","/why", :class => "btn btn-info btn-large btn-block" %>
+                </div>       
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class= "slider-bg">
+        <div data-picture>
+          <div data-src="/assets/slide3.jpg"></div>
+          <div data-src="" data-media="(max-width: 767px)"></div>
+        </div>
+        <div class="container-fluid carousel-text">
+          <div class="row-fluid">
+            <div class="span9">
+              <%= raw @page.content_for(:slide3) %>
               <div class="row-fluid">
                <div class="span4 offset7">
-                <%= link_to "Learn More","/why", :class => "btn btn-primary btn-large btn-block" %>
+                <%= link_to "Learn More","/when", :class => "btn btn-info btn-large btn-block" %>
               </div>       
-            </div>
+            </div>         
           </div>
         </div>
       </div>
     </li>
-    <li class= "slider-bg">
-      <%= image_tag "slide3.jpg" %>
-      <div class="container-fluid carousel-text">
-        <div class="row-fluid">
-          <div class="span9">
-            <%= raw @page.content_for(:slide3) %>
-            <div class="row-fluid">
-             <div class="span4 offset7">
-              <%= link_to "Learn More","/when", :class => "btn btn-primary btn-large btn-block" %>
-            </div>       
-          </div>         
-        </div>
-      </div>
-    </div>
-  </li>
-</ul>
+  </ul>
 </div>
 </div>
 
 <div class="carousel-switches">
   <div class="switches-container container-fluid">
-    <div id="switches" class="row-fluid pagination-centered visible-tablet visible-desktop">
+    <div id="switches" class="row-fluid visible-tablet visible-desktop">
       <div class="span4 carousel-switch">
         <%= raw @page.content_for(:what) %>
       </div>
@@ -77,31 +86,31 @@
   </div>
 </div>
 
-  <div class="container-fluid">
-    <div class="row-fluid ">
-      <div class="span6">
-        <div class="row-fluid left-story">
-          <div class="span4 story-image">
-            <%= image_tag @page.images[0].url, :class => "img-circle" if @page.images.length > 0 %>
-          </div>
+<div class="story-wrapper container-fluid">
+  <div class="row-fluid ">
+    <div class="span6">
+      <div class="row-fluid left-story">
+        <div class="span4 story-image">
+          <%= image_tag @page.images[0].url, :class => "img-circle" if @page.images.length > 0 %>
+        </div>
 
-          <div class="span8 story pagination-right">
-            <%= raw @page.content_for(:left_story) %>
-          </div>
+        <div class="span8 story pagination-right">
+          <%= raw @page.content_for(:left_story) %>
         </div>
       </div>
-      <div class="span6 ">
-        <div class="row-fluid right-story ">      
+    </div>
+    <div class="span6 ">
+      <div class="row-fluid right-story ">      
 
-          <div class="span8 story pagination-left">
-            <%= raw @page.content_for(:right_story) %>
-          </div>
-          <div class="span4 story-image">
-            <%= image_tag @page.images[1].url, :class => "img-circle" if @page.images.length > 1 %>
-          </div>
+        <div class="span8 story pagination-left">
+          <%= raw @page.content_for(:right_story) %>
+        </div>
+        <div class="span4 story-image">
+          <%= image_tag @page.images[1].url, :class => "img-circle" if @page.images.length > 1 %>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 
