@@ -185,18 +185,8 @@ i {
 
   .info-footer {
     background:#cfe2d3;
-    .row-fluid {
-      div {
-        padding-left:20px;
-        padding-right:20px;
-      }
-    }
+    text-align:center;
 
-  }
-
-  h2 {
-    font-size:14pt;
-    line-height:10px;
   }
 
   a {
@@ -206,9 +196,9 @@ i {
 
   .social-links {
     margin-top: 10px;
-    
+
     a {
-      font-size: 45px;
+      font-size: 20pt;
       margin: 0 10px;
       text-decoration: none;
     }
@@ -216,6 +206,7 @@ i {
 
   .copyright-footer {
     background: black;
+    margin-top:10px;
     padding-top: 10px;
     color:gray;
     text-transform: none;
