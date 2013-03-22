@@ -151,6 +151,23 @@ i {
   padding-top:20px;
   padding-right:20px;
   padding-bottom:250px;
+
+  p {
+    font-size:14pt;
+    line-height:17pt;
+    margin-bottom:20px;
+  }
+
+  ul {
+    margin-top:15px;
+    margin-left:15px;
+  }
+
+  li {
+    margin-bottom:15px;
+    font-size:14pt;
+
+  }
 }
 
 .flower-header {
@@ -162,7 +179,7 @@ i {
 
 #footer {
   width:inherit;
-  padding:0px;
+  padding:10px 0px 0px 0px;
   color:#00382f;
   margin: auto auto;
 
@@ -183,8 +200,8 @@ i {
   }
 
   a {
-    font-size:10pt;
-    text-transform: none;
+    font-size:15pt;
+    line-height:20pt;
   }
 
   .social-links {
@@ -206,7 +223,7 @@ i {
       color: gray;
       text-decoration: none;
       padding: 5px;
-
+      font-size:11pt;
       &:active, &:focus, &:hover {
         color: white;
       }
@@ -257,7 +274,7 @@ i {
     margin:0px;
     li {
       a {
-        padding: 15px 15px 15px 15px; 
+        padding: 12px 15px 12px 15px; 
         color: rgb(54, 114, 89); 
         text-decoration: none; 
         float: none; 
@@ -324,7 +341,7 @@ i {
   .logo {
     width:100%;
     position:absolute;
-    top:20px;
+    top:10px;
   }  
 
 }
