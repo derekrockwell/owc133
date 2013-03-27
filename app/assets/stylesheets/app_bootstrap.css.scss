@@ -17,6 +17,7 @@ $gridGutterWidth: 0px;
 
 html, body {
   margin: auto auto;
+  font-size:12pt;
   width: 100%;
   margin: 0px;
   padding: 0px;
@@ -153,25 +154,24 @@ i {
   padding-bottom:250px;
 
   p {
-    font-size:14pt;
-    line-height:17pt;
+    font-size:12pt;
+    line-height:19pt;
     margin-bottom:20px;
   }
 
   ul {
     margin-top:15px;
-    margin-left:15px;
+    margin-left:50px;
   }
 
   li {
-    margin-bottom:15px;
-    font-size:14pt;
-
+    margin-bottom:10px;
   }
 }
 
 .flower-header {
   height:150px;
+  margin-bottom:20px;
   width:100%;
   background: url("/assets/Flowers_Header.jpg") center center;
   overflow:hidden;
@@ -359,8 +359,6 @@ i {
 
 
 .story-wrapper {
-  background-image: url('/assets/stories_tile.png');
-  background-repeat: repeat;
   padding-bottom:200px;
 }
 
@@ -386,6 +384,7 @@ i {
     }
     
     p {
+      margin-top:15px;
       font-size: 15px;
       line-height: 16px;
     }
@@ -440,7 +439,7 @@ i {
 
 
     .carousel-text {
-      top:30px;
+      top:5 0px;
       left:50px;
       width:55%;
 
@@ -471,7 +470,7 @@ i {
   }
   .flex-container {
     .carousel-text {
-      top:30px;
+      top:500px;
       left:50px;
       width:55%;
 
