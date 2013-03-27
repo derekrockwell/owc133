@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Hospice of the Twin Cities</title>
+</head>
+<body>
+    <p>
+        <%=raw t('.greeting') %>,
+    </p>
+
+    <p>
+        <%=raw t('.you_recieved_new_inquiry') %>
+    </p>
+    <%=raw t('.inquiry_starts') %>
+    <p>
+        <%=raw t('.from') %>: <%= @inquiry.name %>
+    </p>
+    <p>
+        <%=raw t('.email') %>: <%= @inquiry.email %>
+    </p>  
+    <p>
+        <%=raw t('.phone') %>: <%= @inquiry.phone %>
+    </p>  
+    <p>
+        <%=raw t('.message') %>:
+        
+        <%=strip_tags(@inquiry.message) %>
+    </p>
+    <p>
+        <%=raw t('.inquiry_ends') %>
+    </p>
+    <p>
+        <%=raw t('.closing_line') %>,
+    </p>
+    <p> 
+        <%=raw Refinery::Core.site_name %>
+    </p>
+    <p>
+        <%=raw t('.ps') %>
+    </p>
+</body>

@@ -15,7 +15,15 @@ Owc133::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
-
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address   => ENV["EMAIL_ADDRESS"],
+    :port      => 2525,
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => ENV["EMAIL_USERNAME"],
+    :password  => ENV["EMAIL_PASSWORD"], # SMTP password is any valid API key
+    :authentication => :plain#'login' # Mandrill supports 'plain' or 'login'
+  }
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
