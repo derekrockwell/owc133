@@ -206,8 +206,7 @@ i {
   }
 
   a {
-    font-size:15pt;
-    line-height:20pt;
+    font-size:20pt;
   }
 
   .social-links {
@@ -218,14 +217,15 @@ i {
 
   .copyright-footer {
     background: url("/assets/footer_tile.png") center center;
-    padding-top: 10px;
     color:gray;
     text-transform: none;
+    font-size:10pt;
+    padding-top:5px;
     a {
       color: gray;
       text-decoration: none;
       padding: 5px;
-      font-size:11pt;
+      font-size:10pt;
       &:active, &:focus, &:hover {
         color: white;
       }
@@ -234,6 +234,7 @@ i {
     div {
       padding-left:20px;
       padding-right:10px;
+      min-height:10px;
     }
   }
 }
