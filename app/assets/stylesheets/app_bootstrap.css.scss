@@ -147,6 +147,22 @@ i {
   }
 }
 
+#blog_post {
+  header {
+    margin-bottom:20px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.blog-sidebar {
+  padding-top:20px;
+  padding-left:20px;
+  padding-right:20px;
+}
+
 .content {
   padding-left:20px;
   padding-top:20px;
@@ -186,7 +202,7 @@ i {
   .info-footer {
     background:#cfe2d3;
     text-align:center;
-
+    text-indent: 4px;
   }
 
   a {
@@ -195,18 +211,13 @@ i {
   }
 
   .social-links {
-    margin-top: 10px;
-
     a {
-      font-size: 20pt;
       margin: 0 10px;
-      text-decoration: none;
     }
   }
 
   .copyright-footer {
-    background: black;
-    margin-top:10px;
+    background: url("/assets/footer_tile.png") center center;
     padding-top: 10px;
     color:gray;
     text-transform: none;
@@ -218,6 +229,11 @@ i {
       &:active, &:focus, &:hover {
         color: white;
       }
+    }
+
+    div {
+      padding-left:20px;
+      padding-right:10px;
     }
   }
 }
@@ -293,6 +309,39 @@ i {
     }
   }
 
+  .linkedin {
+    display:inline-block;
+    background: url("/assets/linkedin_stacked.png") bottom no-repeat;
+    height:45px;
+    width:45px;
+
+    &:hover {
+      background-position:top;
+    }
+  }
+
+  .twitter {
+    display:inline-block;
+    background: url("/assets/twitter_stacked.png") bottom no-repeat;
+    height:45px;
+    width:45px;
+
+    &:hover {
+      background-position:top;
+    }
+  }
+
+  .facebook {
+    display:inline-block;
+    background: url("/assets/facebook_stacked.png") bottom no-repeat;
+    height:45px;
+    width:45px;
+
+    &:hover {
+      background-position:top;
+    }
+  }  
+
   .wavy {
     //bump the wavy thing down
     margin-bottom:-10px;
@@ -363,7 +412,7 @@ i {
 }
 
 .carousel-switches {
-  background: #306956;
+  background: url("/assets/green_tile.png") center center;
   border-top:2px solid white;
   min-height:100px;
 
@@ -390,7 +439,7 @@ i {
     }
 
     &:active, &:focus, &:hover, &.flex-active {
-      background:#458272;
+      background: url("/assets/green_tile_hover.png") center center;
     }
   }
 }

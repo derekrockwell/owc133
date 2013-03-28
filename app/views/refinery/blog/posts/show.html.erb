@@ -2,38 +2,28 @@
 </div>
 
 <div class="container-fluid">
-
   <div class="row-fluid">
-    <div class="span3">
-     <% content_for :body_content_left do %>
-     <div id="show_blog_post">
-      <%= render 'post' %>
+    <div class="span12">
+      <div class="span3 blog-sidebar">
+        <% if @posts.any? %>
+        <section id="blog_posts">
+          <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+          <%= will_paginate @posts %>
+        </section>
+        <% else %>
+        <p><%= t('.no_blog_articles_yet') %></p>
+        <% end %>
+
+        <%= render :partial => '/refinery/blog/shared/body_content_right' %>
+
+        <% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
+      </div>
+
+      <div class="span7 content">
+        <%= render 'post' %>
+      </div>
     </div>
-
-    <% if Refinery::Blog::Post.comments_allowed? %>
-    <%= render 'comments'%>
-    <% end %>
-    <% end %>
   </div>
-
-  <div class="span9">
-    <%= render :partial => '/refinery/blog/shared/body_content_right' %>
-
-    <%= render :partial => "/refinery/content_page", :locals => { :remove_automatic_sections => true }  %>
-
-  </div>
-
 </div>
 
-
-
-
-
-<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
-<% content_for :javascripts do %>
-<%# enable AJAX'd post nav at your own risk until html5 history API implemented. %>
-<%#= javascript_include_tag('refinery/blog/frontend') %>
-<script src="http://w.sharethis.com/button/buttons.js"></script>
-<script>stLight.options({publisher:'<%= Blog::Post::ShareThis.key %>'});</script>
-<% end if Refinery::Blog::Post::ShareThis.enabled? %>
 

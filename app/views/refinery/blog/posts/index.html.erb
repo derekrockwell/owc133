@@ -4,12 +4,7 @@
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span12">
-
-
-      <div class="span3 content">
-        <% content_for :body_content_left do %>
-        <%= raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) if Refinery::Pages.default_parts.any? %>
-
+      <div class="span3 blog-sidebar">
         <% if @posts.any? %>
         <section id="blog_posts">
           <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
@@ -18,18 +13,13 @@
         <% else %>
         <p><%= t('.no_blog_articles_yet') %></p>
         <% end %>
-        <%end%>
 
-        <% content_for :body_content_right_prepend do -%>
-        <%= raw @page.content_for(Refinery::Pages.default_parts.second.to_sym) %>
-        <% end if Refinery::Pages.default_parts.many? -%>
         <%= render :partial => '/refinery/blog/shared/body_content_right' %>
 
-        <%= render :partial => "/refinery/content_page" %>
         <% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
       </div>
 
-      <div class="span9 well">
+      <div class="span7 content">
         <% if @posts.any? then %>
         <% @post = @posts.first%>
         <%= render 'post' %>
