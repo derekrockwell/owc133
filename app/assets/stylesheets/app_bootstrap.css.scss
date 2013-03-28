@@ -63,14 +63,14 @@ a, a * {
 }
 
 #page_container {
-  width:90%;
+  width:100%;
   overflow:hidden; 
   margin: auto auto; 
 }
 
 #page {
   width:100%;
-  min-height: 800px
+  min-height: 500px
 
 }
 
@@ -592,7 +592,12 @@ i {
   }
 
   #page {
-    min-height:300px;
+    min-height:200px;
+  }
+
+  .story h2 {
+    font-size:20px;
+    line-height: 20px;
   }
 
   .flex-container {
@@ -616,6 +621,14 @@ i {
       font-size:13pt;
       line-height:10pt;
     }
+
+    .social-links a {
+      margin:0px 5px;
+    }
+  }
+
+  .story-wrapper {
+    padding-bottom:0px;
   }
 
   #header {
