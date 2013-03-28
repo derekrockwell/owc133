@@ -10,7 +10,6 @@ gem "simple_form"
 gem "taps"
 gem 'jquery-turbolinks'
 gem "turbolinks"
-gem "cache_digests"
 group :development, :test do
 	gem 'sqlite3'
 	# 2013-03-15 - DECj: Convert to pg
