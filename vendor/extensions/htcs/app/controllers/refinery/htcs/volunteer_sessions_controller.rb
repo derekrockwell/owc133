@@ -7,6 +7,7 @@ module Refinery
 		  before_filter :allow_params_authentication!, :only => :create
 		 
 		  def new
+		  	redirect_to '/htcs/work_hours' if volunteer_signed_in?
 		    @volunteer = Volunteer.new(params[:volunteer])
 		  end
 		 

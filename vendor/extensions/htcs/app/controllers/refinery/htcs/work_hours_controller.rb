@@ -72,6 +72,7 @@ module Refinery
           redirect_to '/htcs/work_hours'
         else
           flash[:alert] = "Unable to save work hour."
+          redirect_to '/htcs/work_hours'
         end
       end
 
