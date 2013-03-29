@@ -9,6 +9,7 @@ if (typeof(custom_wymeditor_boot_options) == "undefined") { custom_wymeditor_boo
     , {name: 'font-size', rules:['small', 'normal', 'large'], join: '-'}
     , {name: 'btn btn-primary'}
     , {name: 'btn btn-large'}
+    , {name: 'img img-polaroid'}
     ]
 }; }
 

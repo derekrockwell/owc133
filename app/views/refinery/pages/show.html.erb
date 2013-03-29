@@ -6,11 +6,11 @@
     <div class="row-fluid">
         <div class="span12">
             <div class="span3 sidebar">
-
+                <%= raw @page.content_for(:sidebar) %>
             </div>
 
-            <div class="span9 content">
-                <%= render '/refinery/content_page' %>
+            <div class="span7 content">
+                <%= raw @page.content_for(:Body) %>
             </div>
         </div>
     </div>

@@ -8,14 +8,7 @@
                 <% (@page ? @page.images : []).each  do |image| %>
                 <div class="row-fluid pagination-centered">
                     <div class="span12">
-                        <%= image_tag image.url, :class => "img img-polaroid" %>
-                    </div>
-                    <div class="span12">
-                        <p class="muted">
-                            <i>
-                                "<%= strip_tags image.image_page.caption%>"
-                            </i>
-                        </p>
+                        <%= raw @page.content_for(:sidebar) %>
                     </div>
                 </div>
                 <% end %>
@@ -29,7 +22,7 @@
                 </div>
 
                 <div class="row-fluid">
-                    <div class="span6">
+                    <div class="span5">
                         <h1>Learn More</h1>
                         <p>
                             To request more infomation about becoming a volunteer, please provide the following information:
@@ -37,7 +30,7 @@
                         <%= render "/refinery/inquiries/volunteer_inquiry" %>
                     </div>
 
-                    <div class="span5">
+                    <div class="span5 offset1">
                         <h1>Sign up</h1>
                         <p>To apply to become a volunteer, <a target="_blank" href="/assets/VolunteerApplication.pdf">please click here to download the application</a></p>
                     </div>
