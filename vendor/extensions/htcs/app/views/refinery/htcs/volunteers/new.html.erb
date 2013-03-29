@@ -5,13 +5,11 @@
     <div class="row-fluid">
         <div class="span12">
             <div class="span3 sidebar ">
-                <% (@page ? @page.images : []).each  do |image| %>
                 <div class="row-fluid pagination-centered">
                     <div class="span12">
                         <%= raw @page.content_for(:sidebar) %>
                     </div>
                 </div>
-                <% end %>
             </div>
 
             <div class="span9 content">
@@ -35,6 +33,13 @@
                         <p>To apply to become a volunteer, <a target="_blank" href="/assets/VolunteerApplication.pdf">please click here to download the application</a></p>
                     </div>
                 </div>
+
+                <div class="row-fluid">
+                    <div class="span11">
+                        <%= raw @page.content_for(:information) %>
+                    </div>
+                </div>
+
 
             </div>
         </div>
