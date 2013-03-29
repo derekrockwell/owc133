@@ -3,20 +3,20 @@
 
 <div class="span3">
 
- </div>
+</div>
 
- 
- <div class="span7 offset1">
-      <%- flash.each do |name, msg| -%>
-    <%= content_tag :div, msg, :class => "alert", :id => "flash_#{name}" if msg.is_a?(String) %>
+
+<div class="span7 offset1">
+  <%- flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, :class => "alert", :id => "flash_#{name}" if msg.is_a?(String) %>
   <%- end -%> 
-<% if volunteer_signed_in? %>
+  <% if volunteer_signed_in? %>
   You are signed in as <%= current_volunteer.email %>. <%=link_to "Sign out", '/volunteers/sign_out', :method => :delete %>.
-<% else %>
+  <% else %>
   <%= simple_form_for @volunteer, :url => '/volunteers/sign_in' do |f| %>
   <%= f.input :email %>
   <%= f.input :password %>
   <div><%= f.submit "Sign in", :class => "btn btn-primary btn-large" %></div>
   <% end %>
-<% end %>
+  <% end %>
 </div>

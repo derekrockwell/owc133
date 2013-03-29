@@ -1,3 +1,5 @@
+<div class="flower-header">
+</div>
 <div class="page_container container-fluid">
     <div class="row-fluid">
         <div class="span12">
@@ -32,7 +34,7 @@
             <% end %>
 
             <% # Needs , :method => :delete ?? %>
-            <%= link_to '/htcs/volunteers/sign_out', :class => "btn" do %>
+            <%= link_to '/volunteers/sign_out', :method => :delete, :class => "btn" do %>
             <i class="icon-exclamation-sign"></i> Sign Out
             <% end %>
 
