@@ -31,6 +31,16 @@
             <i class="icon-plus"></i> Add another
             <% end %>
 
+            <% # Needs , :method => :delete ?? %>
+            <%= link_to '/htcs/volunteers/sign_out', :class => "btn" do %>
+            <i class="icon-exclamation-sign"></i> Sign Out
+            <% end %>
+
+            <%= link_to '/htcs/volunteers/edit_password', :class => "btn" do %>
+            <i class="icon-lock"></i> Edit Password
+            <% end %>
+
+
 
             <% end %>
 

@@ -16,7 +16,6 @@
     <p>
       <%=raw @volunteer.first_name %>
       <%=raw @volunteer.last_name %>
-      
     </p>
   </section>
 <% end %>
@@ -35,4 +34,12 @@
 <% end %>
 
 <%= render '/refinery/content_page' %>
+</div>
+
+<div class="span7 offset1">
+<% # 2013-03-29 - DECj: Put some action icons here so all they have to remember is /volunteers %>
+<br>
+<%= link_to 'Main Volunteers Page', '/htcs/volunteers', :class => "btn btn-primary btn-large" %>
+<%= link_to 'Work Report', refinery.workreport_path, :class => "btn btn-primary btn-large" %>
+
 </div>
