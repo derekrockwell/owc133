@@ -189,7 +189,8 @@ i {
   height:150px;
   margin-bottom:20px;
   width:100%;
-  background: url("/assets/Flowers_Header.jpg") center center;
+  background-image: url("/assets/Flowers_Header.jpg");
+  background-position: 50% 20%;
   overflow:hidden;
 }
 
