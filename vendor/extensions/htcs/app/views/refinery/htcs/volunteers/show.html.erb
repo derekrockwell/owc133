@@ -2,10 +2,10 @@
 </div>
 
 <div class="span3">
-
- </div>
+  
+</div>
  
- <div class="span7 offset1">
+<div class="span7 offset1">
   <% content_for :body_content_title do %>
   <%= @volunteer.first_name %>
 <% end %>
@@ -26,7 +26,7 @@
     <ul id="volunteers">
       <% @volunteers.each do |volunteer| %>
         <li>
-          <%= link_to volunteer.first_name, refinery.htcs_volunteer_path(volunteer) %>
+          <%= link_to "#{volunteer.first_name} #{volunteer.last_name}", refinery.htcs_volunteer_path(volunteer) %>
         </li>
       <% end %>
     </ul>

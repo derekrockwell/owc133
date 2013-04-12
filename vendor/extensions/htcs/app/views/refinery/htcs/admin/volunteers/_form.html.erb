@@ -2,19 +2,28 @@
   <%= render '/refinery/admin/error_messages',
               :object => @volunteer,
               :include_object_name => true %>
-
   
   <div class='field'>
     <%= f.label :first_name -%>
     <%= f.text_field :first_name, :class => 'larger widest'  -%>
     <%= f.label :last_name -%>
     <%= f.text_field :last_name, :class => 'larger widest'  -%>
+    <%= f.label :email -%>
+    <%= f.text_field :email, :class => 'larger widest'  -%>
+    <%= f.label :phone_number -%>
+    <%= f.text_field :phone_number, :class => 'larger widest'  -%>
+    <%= f.label :address -%>
+    <%= f.text_field :address, :class => 'larger widest'  -%>
+    <%= f.label :city -%>
+    <%= f.text_field :city, :class => 'larger widest'  -%>
+    <%= f.label :state -%>
+    <%= f.text_field :state, :class => 'larger' -%>
+    <%= f.label :zip -%>
+    <%= f.text_field :zip, :class => 'larger' -%>
     <% if @volunteer.status == 'pending' %>
       <%= f.label :promote -%>
       <%= check_box_tag "volunteer[promote]" -%> 
     <% end %>
-
-
   </div>
   
   <%= render '/refinery/admin/form_actions', :f => f,
