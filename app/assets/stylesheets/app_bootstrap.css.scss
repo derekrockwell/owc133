@@ -14,6 +14,14 @@ $gridGutterWidth: 0px;
 @import "twitter/bootstrap";
 @import "twitter/bootstrap-responsive";
 
+.logo {
+  a {
+    img {
+      height: 100px;
+    }
+  }
+}
+
 
 html, body {
   margin: auto auto;
@@ -63,6 +71,7 @@ a, a * {
 }
 
 #page_container {
+  padding-top: 20px;
   width:100%;
   overflow:hidden; 
   margin: auto auto; 
@@ -384,7 +393,7 @@ i {
   .logo {
     width:100%;
     position:absolute;
-    top:10px;
+    top:-17px;
   }  
 
 }
@@ -638,9 +647,12 @@ i {
 
     .logo {
       position:absolute;
-      top:0px;
+      top:-15px;
       left:30px;
-      width:175px;
+      width:175px; 
+      img {
+        height: 90px;
+      }
     }
 
     .phone {
@@ -710,9 +722,12 @@ i {
 
     .logo {
       position:absolute;
-      top:10px;
+      top:-15px;
       left:20px;
-      width:150px;
+      width:150px; 
+      img {
+        height: 80px;
+      }
     }
 
     .phone {
@@ -807,9 +822,12 @@ i {
 
     .logo {
       position:absolute;
-      top:5px;
+      top:-15px;
       left:0px;
       width:140px;
+      img {
+        height: 70px;
+      }
     }
 
     .phone {
